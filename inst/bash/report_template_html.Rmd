@@ -159,10 +159,13 @@ ba    <- sum((ans$dbh / 2)^2 * pi)
 # --- ONE shared dataset feeds every interactive widget below ---------------
 # Clicking a point in any plot, a marker on the tree map, or a row in the
 # table highlights the *same tree everywhere else, because they all point
-# back to this single crosstalk group ("trees"). The volume slider and the
-# status checkboxes at the top of the report (see "Filters" below) act on
-# this same group too, so they subset every linked plot, map and table in
-# sync -- including the Global Statistics cards, via a small JS listener.
+# back to this single crosstalk group ("trees"). The volume slider, the DBH
+# slider, and the status filter at the top of the report (see "Filters"
+# below) act on this same group too, so they subset every linked plot, map
+# and table in sync -- including the Global Statistics cards, the Carbon
+# Estimate section, and the QSM Quality chart/table, via small JS listeners
+# that all register against a shared `window.__treeApp` helper (see the
+# hidden "js-bootstrap" chunk right after this one).
 
 ans_df <- st_drop_geometry(ans)
 ans_df$dbh_cm <- round(ans_df$dbh * 100, 1)
@@ -185,7 +188,113 @@ status_colors  <- setNames(
 )
 ans_df$Message <- factor(ans_df$Message, levels = status_levels)
 
+# Volume-weighted breakdown by status, computed once here (on the full,
+# unfiltered dataset) so it can drive both the QSM Quality section and the
+# data-quality warning banner at the very top of the report.
+qual_summary <- aggregate(volume ~ Message, data = ans_df, FUN = sum)
+qual_summary$n <- as.integer(table(ans_df$Message)[as.character(qual_summary$Message)])
+qual_summary$pct <- round(qual_summary$volume / sum(qual_summary$volume) * 100, 1)
+qual_summary <- qual_summary[order(-qual_summary$volume), ]
+qual_colors <- status_colors[as.character(qual_summary$Message)]
+
+# If a large share of the stand's volume comes from trees that couldn't be
+# measured reliably, flag it prominently at the top of the report rather
+# than leaving it buried in the QSM Quality section further down.
+novalid_label        <- "No valid measure"
+novalid_idx          <- which(as.character(qual_summary$Message) == novalid_label)
+novalid_pct          <- if (length(novalid_idx) == 1) qual_summary$pct[novalid_idx] else 0
+show_novalid_warning <- isTRUE(novalid_pct > 20)
+
 sd_trees <- SharedData$new(ans_df, key = ~name, group = "trees")
+```
+
+```{r quality-warning}
+tagList(
+  tags$style(HTML(paste0(
+    ".callout-warning {",
+    "border-left: 4px solid #C0392B;",
+    "background: #FBEAEA;",
+    "color: #7A1F1F;",
+    "padding: 12px 16px;",
+    "border-radius: 4px;",
+    "margin-bottom: 18px;",
+    "}"
+  ))),
+  if (show_novalid_warning) {
+    div(class = "callout callout-warning",
+        strong("\u26A0 Data quality warning \u2014 "),
+        sprintf(
+          paste0(
+            "%s%% of total stand volume comes from trees flagged \u201c%s\u201d ",
+            "by the QSM reconstruction (warning threshold: 20%%). Volume, ",
+            "carbon, and allometric results below should be interpreted with ",
+            "caution until these trees are re-measured, corrected, or excluded."
+          ),
+          format(novalid_pct, nsmall = 1), novalid_label
+        )
+    )
+  }
+)
+```
+
+```{r js-bootstrap}
+# --- SHARED REACTIVITY LAYER ------------------------------------------------
+# Everything that needs to react to the volume/DBH/status filters (Global
+# Statistics cards, Carbon Estimate, QSM Quality) shares one copy of the
+# tree-level data and one crosstalk listener, exposed as `window.__treeApp`.
+# Each section below simply calls `window.__treeApp.register(fn)` with its
+# own render function; `fn` is called once immediately (with whatever subset
+# is currently in view) and again every time the filters change.
+tagList(
+  tags$script(
+    id = "tree-report-data", type = "application/json",
+    HTML(jsonlite::toJSON(ans_df[, c("name", "volume", "height", "dbh", "dbh_cm", "Message")], digits = 8))
+  ),
+  tags$script(
+    id = "tree-report-colors", type = "application/json",
+    HTML(jsonlite::toJSON(as.list(status_colors)))
+  ),
+  tags$script(HTML(paste0('
+    (function() {
+      window.__treeApp = window.__treeApp || {};
+      var app = window.__treeApp;
+      app.allTrees = JSON.parse(document.getElementById("tree-report-data").textContent);
+      app.statusColors = JSON.parse(document.getElementById("tree-report-colors").textContent);
+      app.totalArea = ', as.numeric(area), ';
+      app.totalVolume = ', Vtot, ';
+      app.renderers = [];
+      app.currentSubset = app.allTrees;
+
+      app.register = function(fn) {
+        app.renderers.push(fn);
+        fn(app.currentSubset);
+      };
+
+      app.runAll = function(keys) {
+        var subset;
+        if (keys === null || typeof keys === "undefined") {
+          subset = app.allTrees;
+        } else {
+          var keySet = {};
+          keys.forEach(function(k) { keySet[k] = true; });
+          subset = app.allTrees.filter(function(t) { return keySet[t.name]; });
+        }
+        app.currentSubset = subset;
+        app.renderers.forEach(function(fn) { fn(subset); });
+      };
+
+      (function bindWhenReady() {
+        if (window.crosstalk && crosstalk.group) {
+          var filterVar = crosstalk.group("trees").var("filter");
+          filterVar.on("change", function(e) { app.runAll(e.value); });
+          app.runAll(filterVar.get());
+        } else {
+          setTimeout(bindWhenReady, 50);
+        }
+      })();
+    })();
+  ')))
+)
 ```
 
 # Location
@@ -244,9 +353,10 @@ if (has_crs) {
 
 # Filters
 
-Use the controls below to focus the report on a subset of trees. Both
+Use the controls below to focus the report on a subset of trees. All three
 controls act on the **same set of trees** and immediately update every
-chart, map and table below.
+chart, map, table, and summary card below -- including the Carbon Estimate
+and QSM Quality sections.
 
 ```{r filters-slider}
 vol_range <- range(ans_df$volume, na.rm = TRUE)
@@ -255,7 +365,7 @@ if (!is.finite(vol_step) || vol_step <= 0) vol_step <- 0.001
 
 filter_slider(
   id = "volume_filter",
-  label = "Filter by tree volume (m³)",
+  label = "Filter by tree volume (m\u00B3)",
   sharedData = sd_trees,
   column = ~volume,
   step = vol_step,
@@ -263,13 +373,68 @@ filter_slider(
 )
 ```
 
-```{r filters-status}
-filter_checkbox(
-  id = "status_filter",
-  label = "Filter by status",
+```{r filters-dbh}
+dbh_range <- range(ans_df$dbh_cm, na.rm = TRUE)
+dbh_step  <- signif(diff(dbh_range) / 500, 2)
+if (!is.finite(dbh_step) || dbh_step <= 0) dbh_step <- 0.1
+
+filter_slider(
+  id = "dbh_filter",
+  label = "Filter by DBH (cm)",
   sharedData = sd_trees,
-  group = ~Message,
-  inline = TRUE
+  column = ~dbh_cm,
+  step = dbh_step,
+  width = "100%"
+)
+```
+
+```{r filters-status}
+tagList(
+  tags$style(HTML(paste0(
+    '.crosstalk-input-checkboxgroup .checkbox, ',
+    '.crosstalk-input-checkboxgroup .checkbox-inline { display: inline-flex; margin: 4px 8px 4px 0; } ',
+    '.crosstalk-input-checkboxgroup label { display: inline-flex; align-items: center; gap: 7px; ',
+    'padding: 6px 14px; border-radius: 999px; border: 1.5px solid #ddd; background: #f7f7f5; ',
+    'cursor: pointer; font-size: 13px; font-weight: 500; color: #2B2B28; ',
+    'transition: background .15s ease, border-color .15s ease, color .15s ease; user-select: none; } ',
+    '.crosstalk-input-checkboxgroup input[type="checkbox"] { position: absolute; opacity: 0; ',
+    'width: 1px; height: 1px; pointer-events: none; } ',
+    '.crosstalk-input-checkboxgroup label::before { content: ""; width: 9px; height: 9px; ',
+    'border-radius: 50%; background: var(--pill-color, #999); flex: none; } ',
+    '.crosstalk-input-checkboxgroup label:has(input:checked) { background: var(--pill-color, #1C6B3C); ',
+    'border-color: var(--pill-color, #1C6B3C); color: #fff; } ',
+    '.crosstalk-input-checkboxgroup label:has(input:checked)::before { background: #fff; }'
+  ))),
+  filter_checkbox(
+    id = "status_filter",
+    label = "Filter by status",
+    sharedData = sd_trees,
+    group = ~Message,
+    inline = TRUE
+  ),
+  tags$script(HTML(paste0('
+    (function() {
+      var colors = ', jsonlite::toJSON(as.list(status_colors)), ';
+      function colorize() {
+        var container = document.getElementById("status_filter");
+        if (!container) { return; }
+        var labels = container.querySelectorAll("label");
+        labels.forEach(function(lab) {
+          var valueSpan = lab.querySelector(".crosstalk-input-checkboxgroup-value");
+          var text = valueSpan ? valueSpan.textContent.trim()
+                                : lab.textContent.replace(/\\(\\d+\\)\\s*$/, "").trim();
+          if (colors[text]) {
+            lab.style.setProperty("--pill-color", colors[text]);
+          }
+        });
+      }
+      if (document.readyState === "complete" || document.readyState === "interactive") {
+        setTimeout(colorize, 200);
+      } else {
+        document.addEventListener("DOMContentLoaded", function() { setTimeout(colorize, 200); });
+      }
+    })();
+  ')))
 )
 ```
 
@@ -299,18 +464,10 @@ tagList(
     stat("Avg. height", paste(round(mean(ans_df$height, na.rm = TRUE), 2), "m"), "Mean vertical height of the stand", id = "stat-avg-height"),
     stat("Avg. DBH", paste(round(mean(ans_df$dbh_cm, na.rm = TRUE), 1), "cm"), "Mean diameter at breast height (1.3 m)", id = "stat-avg-dbh")
   ),
-  tags$script(
-    id = "trees-data-json", type = "application/json",
-    HTML(jsonlite::toJSON(ans_df[, c("name", "volume", "height", "dbh")], digits = 8))
-  ),
-  tags$script(HTML(sprintf("
+  tags$script(HTML('
     (function() {
-      const totalArea = %f;
-      const dataEl = document.getElementById('trees-data-json');
-      const allTrees = JSON.parse(dataEl.textContent);
-
       function computeStats(subset) {
-        let n = subset.length, vol = 0, ba = 0, height = 0, dbhCm = 0;
+        var n = subset.length, vol = 0, ba = 0, height = 0, dbhCm = 0;
         subset.forEach(function(t) {
           vol += t.volume;
           ba  += Math.PI * Math.pow(t.dbh / 2, 2);
@@ -325,41 +482,29 @@ tagList(
       }
 
       function render(subset) {
-        const s = computeStats(subset);
-        document.getElementById('stat-trees').textContent = s.n;
-        document.getElementById('stat-density').textContent = (s.n / totalArea * 10000).toFixed(2) + ' / ha';
-        document.getElementById('stat-basal-area').textContent = s.ba.toFixed(2) + ' m\u00B2';
-        document.getElementById('stat-basal-area-ha').textContent = (s.ba / totalArea * 10000).toFixed(2) + ' m\u00B2/ha';
-        document.getElementById('stat-total-volume').textContent = s.volume.toFixed(2) + ' m\u00B3';
-        document.getElementById('stat-avg-height').textContent = s.avgHeight.toFixed(2) + ' m';
-        document.getElementById('stat-avg-dbh').textContent = s.avgDbh.toFixed(1) + ' cm';
+        var app = window.__treeApp;
+        var s = computeStats(subset);
+        document.getElementById("stat-trees").textContent = s.n;
+        document.getElementById("stat-density").textContent =
+          (app.totalArea > 0 ? (s.n / app.totalArea * 10000) : 0).toFixed(2) + " / ha";
+        document.getElementById("stat-basal-area").textContent = s.ba.toFixed(2) + " m\u00B2";
+        document.getElementById("stat-basal-area-ha").textContent =
+          (app.totalArea > 0 ? (s.ba / app.totalArea * 10000) : 0).toFixed(2) + " m\u00B2/ha";
+        document.getElementById("stat-total-volume").textContent = s.volume.toFixed(2) + " m\u00B3";
+        document.getElementById("stat-avg-height").textContent = s.avgHeight.toFixed(2) + " m";
+        document.getElementById("stat-avg-dbh").textContent = s.avgDbh.toFixed(1) + " cm";
       }
 
-      function applyFilterKeys(keys) {
-        if (keys === null || typeof keys === 'undefined') {
-          render(allTrees);
+      function waitForApp() {
+        if (window.__treeApp && window.__treeApp.register) {
+          window.__treeApp.register(render);
         } else {
-          const keySet = {};
-          keys.forEach(function(k) { keySet[k] = true; });
-          render(allTrees.filter(function(t) { return keySet[t.name]; }));
+          setTimeout(waitForApp, 50);
         }
       }
-
-      // Crosstalk combines the volume slider and the status checkboxes into
-      // one intersected 'filter' variable per group, so a single listener
-      // here stays correct no matter how many filter widgets are active.
-      function bindWhenReady() {
-        if (window.crosstalk && crosstalk.group) {
-          const filterVar = crosstalk.group('trees').var('filter');
-          filterVar.on('change', function(e) { applyFilterKeys(e.value); });
-          applyFilterKeys(filterVar.get());
-        } else {
-          setTimeout(bindWhenReady, 50);
-        }
-      }
-      bindWhenReady();
+      waitForApp();
     })();
-  ", as.numeric(area))))
+  '))
 )
 ```
 
@@ -370,7 +515,8 @@ conversion factor (Mg C per m&sup3; of wood volume), which depends on
 species, wood density, and the carbon fraction of biomass. That factor isn't
 fixed for this dataset yet, use the slider below to explore the estimate
 under different assumptions, and swap in the correct factor for your
-species/region once you have it.
+species/region once you have it. The estimate below updates automatically
+to use only the trees currently passing the filters above.
 
 ```{r carbon-estimate}
 tagList(
@@ -389,32 +535,46 @@ tagList(
     )
   ),
   div(class = "stat-grid",
-    stat("Total carbon", tags$span(id = "total-carbon-value", "-"), "Estimated stand carbon stock"),
-    stat("Carbon / ha", tags$span(id = "carbon-per-ha-value", "-"), "Estimated carbon density"),
-    stat("Total volume", paste(round(Vtot, 2), "m\u00B3"), "Reference: total QSM volume (fixed)")
+    stat("Total carbon", tags$span(id = "total-carbon-value", "-"), "Estimated carbon stock for the trees currently in view"),
+    stat("Carbon / ha", tags$span(id = "carbon-per-ha-value", "-"), "Estimated carbon density (uses the fixed plot area)"),
+    stat("Volume in view", tags$span(id = "carbon-ref-volume", paste(round(Vtot, 2), "m\u00B3")), "Sum of QSM volume for trees passing the current filters")
   ),
-  tags$script(HTML(sprintf("
+  tags$script(HTML(paste0('
     (function() {
-      const vtot = %f;
-      const area = %f;
-      const slider = document.getElementById('carbon-slider');
-      const factorDisplay = document.getElementById('carbon-factor-display');
-      const totalEl = document.getElementById('total-carbon-value');
-      const perHaEl = document.getElementById('carbon-per-ha-value');
+      var totalArea = ', as.numeric(area), ';
+      var currentVol = ', Vtot, ';
+      var slider = document.getElementById("carbon-slider");
+      var factorDisplay = document.getElementById("carbon-factor-display");
+      var totalEl = document.getElementById("total-carbon-value");
+      var perHaEl = document.getElementById("carbon-per-ha-value");
+      var volEl = document.getElementById("carbon-ref-volume");
 
       function update() {
-        const factor = parseFloat(slider.value);
+        var factor = parseFloat(slider.value);
         factorDisplay.textContent = factor.toFixed(2);
-        const total = vtot * factor;
-        const perHa = (total / area) * 10000;
-        totalEl.textContent = total.toFixed(2) + ' Mg';
-        perHaEl.textContent = perHa.toFixed(2) + ' Mg/ha';
+        var total = currentVol * factor;
+        var perHa = totalArea > 0 ? (total / totalArea) * 10000 : 0;
+        totalEl.textContent = total.toFixed(2) + " Mg";
+        perHaEl.textContent = perHa.toFixed(2) + " Mg/ha";
+        volEl.textContent = currentVol.toFixed(2) + " m\u00B3";
       }
 
-      slider.addEventListener('input', update);
       update();
+      slider.addEventListener("input", update);
+
+      function waitForApp() {
+        if (window.__treeApp && window.__treeApp.register) {
+          window.__treeApp.register(function(subset) {
+            currentVol = subset.reduce(function(s, t) { return s + t.volume; }, 0);
+            update();
+          });
+        } else {
+          setTimeout(waitForApp, 50);
+        }
+      }
+      waitForApp();
     })();
-  ", Vtot, as.numeric(area))))
+  ')))
 )
 ```
 
@@ -425,25 +585,17 @@ indicating whether the model completed cleanly or with a warning. The chart
 below shows what share of the **stand's total volume** falls under each
 status — this matters more than a simple tree count, since a warning on one
 large tree can carry more volume risk than several small ones. Trees with no
-status recorded are grouped under "OK".
+status recorded are grouped under "OK". This chart and table update
+automatically to reflect the filters selected above.
 
 ```{r qsm-quality}
-qual <- ans_df
-
-qual_summary <- aggregate(volume ~ Message, data = qual, FUN = sum)
-qual_summary$n <- as.integer(table(qual$Message)[as.character(qual_summary$Message)])
-qual_summary$pct <- round(qual_summary$volume / sum(qual_summary$volume) * 100, 1)
-qual_summary <- qual_summary[order(-qual_summary$volume), ]
-
-qual_colors <- status_colors[as.character(qual_summary$Message)]
-
-plot_ly(
+p <- plot_ly(
   qual_summary,
   labels = ~Message,
   values = ~volume,
   type = "pie",
   hole = 0.55,
-  rotation = 90, # <-- Add this to rotate the starting point to the right
+  rotation = 90,
   textinfo = "label+percent",
   customdata = ~n,
   hovertemplate = paste0(
@@ -456,23 +608,145 @@ plot_ly(
   layout(
     title = list(text = "Share of total volume by status", font = list(size = 13)),
     font = list(family = "IBM Plex Sans, sans-serif"),
-    showlegend = TRUE,
+    showlegend = FALSE,
     annotations = list(list(
       text = paste0(round(Vtot, 1), " m\u00B3"),
       x = 0.5, y = 0.5, font = list(size = 14, color = ink), showarrow = FALSE
     ))
   )
+
+p$elementId <- "qsm-quality-donut"
+p
 ```
 
 ```{r qsm-quality-table}
-datatable(
-  qual_summary[, c("Message", "n", "volume", "pct")],
-  rownames = FALSE,
-  colnames = c("Status", "Trees", "Volume (m\u00B3)", "% of total volume"),
-  options = list(dom = "t", pageLength = nrow(qual_summary), ordering = FALSE),
-  class = "display compact stripe"
-) %>%
-  formatRound(columns = "volume", digits = 2)
+tagList(
+  tags$style(HTML(paste0(
+    '.qsm-status-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; } ',
+    '.qsm-status-table th, .qsm-status-table td { padding: 6px 10px; border-bottom: 1px solid #eee; text-align: left; } ',
+    '.qsm-status-table thead th { border-bottom: 2px solid #ccc; font-weight: 600; } ',
+    '.qsm-status-table tbody tr:nth-child(even) { background: #fafafa; }'
+  ))),
+  tags$table(class = "qsm-status-table",
+    tags$thead(
+      tags$tr(
+        tags$th("Status"), tags$th("Trees"), tags$th("Volume (m\u00B3)"), tags$th("% of total volume")
+      )
+    ),
+    tags$tbody(
+      id = "qsm-quality-tbody",
+      lapply(seq_len(nrow(qual_summary)), function(i) {
+        tags$tr(
+          tags$td(as.character(qual_summary$Message[i])),
+          tags$td(qual_summary$n[i]),
+          tags$td(sprintf("%.2f", qual_summary$volume[i])),
+          tags$td(sprintf("%.1f", qual_summary$pct[i]))
+        )
+      })
+    )
+  ),
+  tags$script(HTML(paste0('
+    (function() {
+      var statusColors = ', jsonlite::toJSON(as.list(status_colors)), ';
+      var levels = Object.keys(statusColors);
+      var tbody = document.getElementById("qsm-quality-tbody");
+      var donutId = "qsm-quality-donut";
+      var inkColor = "', ink, '";
+
+      function computeSummary(subset) {
+        var byLevel = {};
+        levels.forEach(function(l) { byLevel[l] = { n: 0, volume: 0 }; });
+        subset.forEach(function(t) {
+          var m = t.Message || "OK";
+          if (!byLevel[m]) { byLevel[m] = { n: 0, volume: 0 }; }
+          byLevel[m].n += 1;
+          byLevel[m].volume += t.volume;
+        });
+        var totalVol = subset.reduce(function(s, t) { return s + t.volume; }, 0);
+        var rows = levels
+          .map(function(l) {
+            return {
+              message: l,
+              n: byLevel[l].n,
+              volume: byLevel[l].volume,
+              pct: totalVol > 0 ? (byLevel[l].volume / totalVol * 100) : 0
+            };
+          })
+          .filter(function(r) { return r.n > 0; })
+          .sort(function(a, b) { return b.volume - a.volume; });
+        return { rows: rows, totalVol: totalVol };
+      }
+
+      function renderTable(rows) {
+        while (tbody.firstChild) { tbody.removeChild(tbody.firstChild); }
+        if (rows.length === 0) {
+          var tr = document.createElement("tr");
+          var td = document.createElement("td");
+          td.setAttribute("colspan", "4");
+          td.style.textAlign = "center";
+          td.style.color = "#6B6963";
+          td.textContent = "No trees match the current filters";
+          tr.appendChild(td);
+          tbody.appendChild(tr);
+          return;
+        }
+        rows.forEach(function(r) {
+          var tr = document.createElement("tr");
+          [r.message, r.n, r.volume.toFixed(2), r.pct.toFixed(1)].forEach(function(val) {
+            var td = document.createElement("td");
+            td.textContent = val;
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        });
+      }
+
+      function renderDonut(rows, totalVol) {
+        var gd = document.getElementById(donutId);
+        if (!gd || !window.Plotly) { return; }
+        Plotly.react(gd, [{
+          type: "pie",
+          labels: rows.map(function(r) { return r.message; }),
+          values: rows.map(function(r) { return r.volume; }),
+          hole: 0.55,
+          rotation: 90,
+          textinfo: "label+percent",
+          customdata: rows.map(function(r) { return r.n; }),
+          hovertemplate: "<b>%{label}</b><br>%{value:.2f} m\u00B3 (%{percent})<br>%{customdata} trees<extra></extra>",
+          marker: {
+            colors: rows.map(function(r) { return statusColors[r.message]; }),
+            line: { color: "white", width: 1.5 }
+          }
+        }], {
+          title: { text: "Share of total volume by status", font: { size: 13 } },
+          font: { family: "IBM Plex Sans, sans-serif" },
+          showlegend: true,
+          annotations: [{
+            text: totalVol.toFixed(1) + " m\u00B3",
+            x: 0.5, y: 0.5,
+            font: { size: 14, color: inkColor },
+            showarrow: false
+          }]
+        });
+      }
+
+      function render(subset) {
+        var res = computeSummary(subset);
+        renderDonut(res.rows, res.totalVol);
+        renderTable(res.rows);
+      }
+
+      function waitForApp() {
+        if (window.__treeApp && window.__treeApp.register) {
+          window.__treeApp.register(render);
+        } else {
+          setTimeout(waitForApp, 50);
+        }
+      }
+      waitForApp();
+    })();
+  ')))
+)
 ```
 
 # Allometrics {.tabset}
@@ -481,7 +755,7 @@ The tabs below show the relationships between tree metrics derived from the
 Quantitative Structure Models. **Click a point** in any tab (or a row in the
 *Data table* tab) to highlight that tree everywhere on this page, including
 the tree map further down. Double-click a plot to clear the selection. The
-volume and status filters near the top of this report also apply here.
+volume, DBH, and status filters near the top of this report also apply here.
 
 ## Volume vs Diameter
 

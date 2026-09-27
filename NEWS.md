@@ -69,6 +69,8 @@
  
  3. New book section about the [qsf log analysis](https://r-lidar.github.io/arbor_book/qsf.html#sec-log)
 
+ 4. New book section about the [qsm flowchart](https://r-lidar.github.io/arbor_book/qsf.html#sec-flowchart)
+ 
 # v1.0.0
 
 Public release

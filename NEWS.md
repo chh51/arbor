@@ -1,5 +1,9 @@
 # v1.1.0
 
+Fix: CRS assignment with `st_crs()<-` was not returning objects with qsm and qsf classes
+
+# v1.1.0
+
 ### NEW FEATURES
 
 1. `segment_instance()` now detects and fixes over-segmentation, i.e. single

@@ -369,6 +369,16 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// qsm_autorepair_cpp
+Rcpp::DataFrame qsm_autorepair_cpp(Rcpp::DataFrame df);
+RcppExport SEXP _arbor_qsm_autorepair_cpp(SEXP dfSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< Rcpp::DataFrame >::type df(dfSEXP);
+    rcpp_result_gen = Rcpp::wrap(qsm_autorepair_cpp(df));
+    return rcpp_result_gen;
+END_RCPP
+}
 // read_adtree_skeleton
 Rcpp::DataFrame read_adtree_skeleton(std::string filename);
 RcppExport SEXP _arbor_read_adtree_skeleton(SEXP filenameSEXP) {
@@ -572,6 +582,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_arbor_qsm_dbh_cpp", (DL_FUNC) &_arbor_qsm_dbh_cpp, 2},
     {"_arbor_qsm_stem_cpp", (DL_FUNC) &_arbor_qsm_stem_cpp, 1},
     {"_arbor_qsm_merchantable_cpp", (DL_FUNC) &_arbor_qsm_merchantable_cpp, 3},
+    {"_arbor_qsm_autorepair_cpp", (DL_FUNC) &_arbor_qsm_autorepair_cpp, 1},
     {"_arbor_read_adtree_skeleton", (DL_FUNC) &_arbor_read_adtree_skeleton, 1},
     {"_arbor_qsm_mesh_cpp", (DL_FUNC) &_arbor_qsm_mesh_cpp, 2},
     {"_arbor_qsm_get_cylID", (DL_FUNC) &_arbor_qsm_get_cylID, 2},

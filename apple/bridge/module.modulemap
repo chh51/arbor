@@ -1,0 +1,4 @@
+module ArborBridge {
+    header "arbor_bridge.h"
+    export *
+}

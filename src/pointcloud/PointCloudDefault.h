@@ -129,6 +129,20 @@ public:
 
   #undef POINT_CLOUD_ATTR
 
+  // Drop buffers the caller did not supply, so has_*() is false for those columns.
+  // The constructor allocates every attribute; the non-R cloud has no other way to remove one.
+  void retain_attributes(bool keep_treeid, bool keep_foliage, bool keep_classification, bool keep_passage, bool keep_hag, bool keep_pwood, bool keep_rgb, bool keep_userdata)
+  {
+    if (!keep_treeid) treeid.clear();
+    if (!keep_foliage) foliage.clear();
+    if (!keep_classification) classif.clear();
+    if (!keep_passage) passage.clear();
+    if (!keep_hag) hag.clear();
+    if (!keep_pwood) pwood.clear();
+    if (!keep_rgb) rgb.clear();
+    if (!keep_userdata) userdata.clear();
+  }
+
   inline void set_color(size_t i, uint8_t r, uint8_t g, uint8_t b) { rgb[i] = {r, g, b}; }
   inline std::array<uint8_t, 3> get_color(size_t i) const
   {
@@ -178,6 +192,7 @@ private:
     if (has_class())   std::swap(classif[i], classif[j]);
     if (has_hag())     std::swap(hag[i], hag[j]);
     if (has_pwood())   std::swap(pwood[i], pwood[j]);
+    if (has_userdata()) std::swap(userdata[i], userdata[j]);
   }
 
 private:

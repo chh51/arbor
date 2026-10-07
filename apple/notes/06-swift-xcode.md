@@ -1,6 +1,6 @@
 # Xcode project, then Swift API, then Swift Testing
 
-**Status:** step 1 is in place. Step 2 has a public Swift API in `apple/Arbor/`, target `Arbor` in `apple/Arbor.xcodeproj`. Functions that are R logic run in Swift. Functions that enter the C++ engine throw `ArborError.engineNotConnected` until that link exists. Swift tests are not started. The processing surface is `apple/notes/05-swift-r-api.md`. The macOS compiler and memory notes are `apple/notes/04-openmp-apple.md`.
+**Status:** step 1 is in place. Step 2's Swift API calls ArborCore through `apple/bridge` for the pipeline and QSM/QSF surface the static library already compiles. `resolveOversegmentation`, `extractTreeContext`, and `qsfSegmentSemantic` still throw `ArborError.engineNotConnected` because that C++ lives in Rcpp translation units ArborCore does not compile. Swift tests are not started. The processing surface is `apple/notes/05-swift-r-api.md`. The macOS compiler and memory notes are `apple/notes/04-openmp-apple.md`.
 
 Work in this order. Each step is done when the one before it builds.
 
@@ -107,4 +107,4 @@ Numeric locks to keep, from the R tests: DBH `0.2228` and `0.2093` at tolerance 
 
 ## What this discussion is not deciding yet
 
-LAS reader library versus a frozen point dump. How `flag_buffer` gets a hull and buffer without `sf`. Whether the Swift/C++ wrapper is a C ABI or Xcode’s C++ interop. Those can wait until `ArborCore` links.
+LAS reader library versus a frozen point dump is still open. `flag_buffer` is implemented in Swift. The Swift/C++ wrapper is the C API in `apple/bridge`.

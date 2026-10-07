@@ -27,6 +27,8 @@ public enum ArborError: Error, Equatable, Sendable {
     case missingAttribute(String)
     /// An argument fails a check the R function makes before it runs.
     case invalidArgument(String)
-    /// This function's work is in the C++ engine, and the Swift target does not call that engine yet.
+    /// The C++ for this function is not compiled into ArborCore.
     case engineNotConnected(String)
+    /// The C++ engine threw. The message is the runtime error text.
+    case engineFailed(String)
 }

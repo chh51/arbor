@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A11B00010000000000000004 /* arbor_bridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A11B00010000000000000001 /* arbor_bridge.cpp */; };
+		A11B00010000000000000005 /* libArborCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 723E73F5B8DEC41D3AEE030C /* libArborCore.a */; };
+		A11B00010000000000000012 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11B00010000000000000011 /* Bridge.swift */; };
 		00DF3A50C82DFBEC96E4A0A3 /* QSMbuilder_butt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F728C2A2BFAE1B1B642E1BD7 /* QSMbuilder_butt.cpp */; };
 		017C44221C02AE243782BC02 /* progressbar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F54075B383346589CCEBE011 /* progressbar.cpp */; };
 		0243B1AABD374EE3923F9CFB /* QSM_read.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25A47D27D10F054B60E91E4E /* QSM_read.cpp */; };
@@ -93,6 +96,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A11B00010000000000000009 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98F54143AB4E86B28C3AFEE0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E785D27BEE03D67EB88DFF0;
+			remoteInfo = ArborCore;
+		};
 		DC84B1C2A1F5A7AB31534F37 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 98F54143AB4E86B28C3AFEE0 /* Project object */;
@@ -103,6 +113,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A11B00010000000000000001 /* arbor_bridge.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = arbor_bridge.cpp; sourceTree = "<group>"; };
+		A11B00010000000000000002 /* arbor_bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arbor_bridge.h; sourceTree = "<group>"; };
+		A11B00010000000000000003 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module"; path = module.modulemap; sourceTree = "<group>"; };
+		A11B00010000000000000011 /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
 		026D714E88A8879F2723DF05 /* services.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = services.cpp; sourceTree = "<group>"; };
 		05588C645277320720397D35 /* fitting_multicircle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fitting_multicircle.h; sourceTree = "<group>"; };
 		0792ACBC88206F4C63BC3B27 /* QSM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QSM.h; sourceTree = "<group>"; };
@@ -257,6 +271,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A11B00010000000000000007 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A11B00010000000000000005 /* libArborCore.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BD80B4108AE7D05364B48A52 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -483,6 +505,7 @@
 			children = (
 				A2946AB624CDB6BE061A1AC0 /* src */,
 				33FABCE43864BA16A96C1CB2 /* driver */,
+				A11B00010000000000000006 /* bridge */,
 				C4E1F6E515E84CE7ACCD34B2 /* Arbor */,
 				831AB56F3076F71600E81988 /* R */,
 				FBDC4F23F93125BBEEAE800C /* Products */,
@@ -527,10 +550,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		A11B00010000000000000006 /* bridge */ = {
+			isa = PBXGroup;
+			children = (
+				A11B00010000000000000001 /* arbor_bridge.cpp */,
+				A11B00010000000000000002 /* arbor_bridge.h */,
+				A11B00010000000000000003 /* module.modulemap */,
+			);
+			path = bridge;
+			sourceTree = "<group>";
+		};
 		C4E1F6E515E84CE7ACCD34B2 /* Arbor */ = {
 			isa = PBXGroup;
 			children = (
 				B9A73BFF3E014EE19540FBD4 /* Allometry.swift */,
+				A11B00010000000000000011 /* Bridge.swift */,
 				1F5CA6900ABA403AAA93DB29 /* ArborError.swift */,
 				0A9D466B91B446C98F199377 /* Colorize.swift */,
 				A92E59EA16354FE7A8DCB271 /* Engine.swift */,
@@ -602,10 +636,12 @@
 			buildConfigurationList = 6F16307E73AD48D9A1A70741 /* Build configuration list for PBXNativeTarget "Arbor" */;
 			buildPhases = (
 				00E9313EA3A7409F94DDC009 /* Sources */,
+				A11B00010000000000000007 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A11B00010000000000000008 /* PBXTargetDependency */,
 			);
 			name = Arbor;
 			productName = Arbor;
@@ -715,6 +751,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A11B00010000000000000004 /* arbor_bridge.cpp in Sources */,
+				A11B00010000000000000012 /* Bridge.swift in Sources */,
 				3228EC4EC8ED40A89B65F504 /* Allometry.swift in Sources */,
 				DBCE5E405B9E4C96B02F49AC /* ArborError.swift in Sources */,
 				332BC9B869CB46129F78286A /* Colorize.swift in Sources */,
@@ -748,6 +786,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A11B00010000000000000008 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5E785D27BEE03D67EB88DFF0 /* ArborCore */;
+			targetProxy = A11B00010000000000000009 /* PBXContainerItemProxy */;
+		};
 		5F62427B1141A61A4C075B82 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5E785D27BEE03D67EB88DFF0 /* ArborCore */;
@@ -889,6 +932,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/opt/libomp/lib,
+				);
+				OTHER_CFLAGS = (
+					"-Xpreprocessor",
+					"-fopenmp",
+				);
+				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
+				OTHER_LDFLAGS = "-lomp";
+				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/bridge";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -909,6 +963,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/opt/libomp/lib,
+				);
+				OTHER_CFLAGS = (
+					"-Xpreprocessor",
+					"-fopenmp",
+				);
+				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
+				OTHER_LDFLAGS = "-lomp";
+				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/bridge";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

@@ -146,4 +146,40 @@ public final class PointCloud {
         guard let hag else { throw ArborError.missingAttribute("hag") }
         return hag
     }
+
+    /// `order[newIndex]` is the old index. Used when semantic or instance segmentation
+    /// partitions the engine cloud and the extra columns have to follow those points.
+    func reorder(by order: [Int32]) throws {
+        if order.count != count {
+            throw ArborError.engineFailed("reordered point cloud has \(order.count) points for \(count)")
+        }
+        var index: [Int] = []
+        index.reserveCapacity(order.count)
+        for value in order {
+            if value < 0 || Int(value) >= count {
+                throw ArborError.engineFailed("reordered point cloud has an invalid index")
+            }
+            index.append(Int(value))
+        }
+        func take<T>(_ column: [T]) -> [T] {
+            index.map { column[$0] }
+        }
+        x = take(x)
+        y = take(y)
+        z = take(z)
+        classification = classification.map(take)
+        hag = hag.map(take)
+        pwood = pwood.map(take)
+        foliage = foliage.map(take)
+        passage = passage.map(take)
+        userData = userData.map(take)
+        treeID = treeID.map(take)
+        range = range.map(take)
+        gpsTime = gpsTime.map(take)
+        red = red.map(take)
+        green = green.map(take)
+        blue = blue.map(take)
+        returnNumber = returnNumber.map(take)
+        numberOfReturns = numberOfReturns.map(take)
+    }
 }

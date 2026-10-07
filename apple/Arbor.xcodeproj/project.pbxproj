@@ -3,177 +3,205 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E11B6E4EF8323FD4535EB6E /* dtm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 314609E1011070E60855BAFC /* dtm.cpp */; };
-		3A66E506D1E61EA5BC22A5DB /* fitting_circle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8ED5244D47A3B11D7DAAE276 /* fitting_circle.cpp */; };
-		7859ACF337602CE6CE4F13AE /* fitting_ellipse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D479C3229E77CAA7272F2C /* fitting_ellipse.cpp */; };
-		551E8C2F8999D204E8606B90 /* fitting_fourier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEF0277ACF443F3C0A982DC8 /* fitting_fourier.cpp */; };
-		85F7830D94447AB76C787B77 /* fitting_multicircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D5B17DBB068791B11E9475D5 /* fitting_multicircle.cpp */; };
-		088AC455F8DCE78BC4040BC8 /* fitting_orbicular.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CFCA3E17B0054FE06D08E13B /* fitting_orbicular.cpp */; };
-		9F5946943AFB99061B323D10 /* fitting_polynomial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D97C760A97C87D643DA3EE2F /* fitting_polynomial.cpp */; };
-		880CD5616EC729795CFF1153 /* PointCloudDataFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAF57CB1AB118B0124FA87C4 /* PointCloudDataFrame.cpp */; };
-		60F2CA237C3C40B030BA3009 /* PointCloudDefault.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 696BFEFC22DDE76F319C0AF0 /* PointCloudDefault.cpp */; };
-		737EA77F12872D5A3C0E6ADA /* QSF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3424D0CAF4C6B6902BB4352 /* QSF.cpp */; };
-		B114AC1826FEA11190118EC4 /* qsf_api.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 692D5D09479FF731E45486B4 /* qsf_api.cpp */; };
-		9E4AE74D9B6416705D9EA58A /* QSM_mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC0560D7A5363CD3EEA176EC /* QSM_mesh.cpp */; };
-		0243B1AABD374EE3923F9CFB /* QSM_read.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25A47D27D10F054B60E91E4E /* QSM_read.cpp */; };
-		6C57D0AB5ADD61DA83875B35 /* QSM_utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 919E4DA7C2187B0A39098AB3 /* QSM_utils.cpp */; };
-		DEA50587D12CD1F341614B5E /* QSM_write.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CFEFBFF47E2098B00CC5937 /* QSM_write.cpp */; };
-		73821AF3AF1EF586FB1B062F /* QSMbuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2BDD56776D4630FBC194B85 /* QSMbuilder.cpp */; };
-		2BE3554250EEC5F8F9D8EFEE /* QSMbuilder_architecture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3EE373AE64CDF9578BBDDCD7 /* QSMbuilder_architecture.cpp */; };
 		00DF3A50C82DFBEC96E4A0A3 /* QSMbuilder_butt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F728C2A2BFAE1B1B642E1BD7 /* QSMbuilder_butt.cpp */; };
-		B71848CA4816FD697E4942D9 /* QSMbuilder_cluster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C91148FE8DC5F1DC202B455 /* QSMbuilder_cluster.cpp */; };
-		2CA1659FBA3F1A42B19E7457 /* QSMbuilder_dist2root.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 633B6133215522EBE4D883EE /* QSMbuilder_dist2root.cpp */; };
-		814321AFF5715F33C317BF16 /* QSMbuilder_pipemodel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6B73BD300E65DD5B5FE8233 /* QSMbuilder_pipemodel.cpp */; };
+		017C44221C02AE243782BC02 /* progressbar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F54075B383346589CCEBE011 /* progressbar.cpp */; };
+		0243B1AABD374EE3923F9CFB /* QSM_read.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25A47D27D10F054B60E91E4E /* QSM_read.cpp */; };
 		072056ECDB70DFEF71A3F873 /* QSMbuilder_prolongation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E78E4A89C5BAB2305A39CB0 /* QSMbuilder_prolongation.cpp */; };
-		AF9C57A17F99F8997557B57F /* QSMbuilder_radius.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B070F227C399B6C33F785AFA /* QSMbuilder_radius.cpp */; };
-		4ED3B199F8722F618EC61B75 /* QSMbuilder_skeleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 462352664CFF30FBBA2CB321 /* QSMbuilder_skeleton.cpp */; };
-		DFB436131A983D9F20EA98EC /* QSMbuilder_smooth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FD86CCEEC83F6C914C1FDC0 /* QSMbuilder_smooth.cpp */; };
-		D692CAC970BABB6A3ADC09C1 /* QSMbuilder_utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C89FA3175B0421D409E31D3A /* QSMbuilder_utils.cpp */; };
-		11EBC349EE12DE774B552F23 /* qsm_api.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEEE25B6BDF424A326DDE4A5 /* qsm_api.cpp */; };
-		339A0369C58698377883617A /* SeedDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C90A448D82F1F0BB91BD4FF8 /* SeedDetector.cpp */; };
-		5A4A641DEC464CFAE284BCF6 /* SeedDetector_cage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F37D0627DE53CDD7D657066 /* SeedDetector_cage.cpp */; };
-		8F989BE08AD3EA1FEF16C98C /* SeedDetector_circle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB302EAB6E523F1A5E41BA5A /* SeedDetector_circle.cpp */; };
-		B5F3A184327D877030653FB5 /* find_seeds_api.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D6E52A3A38B39E6FF741151 /* find_seeds_api.cpp */; };
-		AD8C4A2544D32BE28072FA70 /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF999EBB9480BFD02229C2D9 /* Graph.cpp */; };
+		088AC455F8DCE78BC4040BC8 /* fitting_orbicular.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CFCA3E17B0054FE06D08E13B /* fitting_orbicular.cpp */; };
 		0C668BC15A8E19CDC669F0AF /* GraphBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5C851A12845D8A0BF170FF3F /* GraphBuilder.cpp */; };
-		9F077AC3C43F2E9FEF126B32 /* segment_ground_api.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC5C8F30EAA57BDB4EED03B /* segment_ground_api.cpp */; };
+		11EBC349EE12DE774B552F23 /* qsm_api.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEEE25B6BDF424A326DDE4A5 /* qsm_api.cpp */; };
+		1CB5E6EEBCEE76A85BAFC3AC /* anisotopy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52202A033391BFEFC51C42A7 /* anisotopy.cpp */; };
+		242A56047C871A7415753BEB /* Grid3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B47368ED9F33DDB71CA968FC /* Grid3D.cpp */; };
+		2BE3554250EEC5F8F9D8EFEE /* QSMbuilder_architecture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3EE373AE64CDF9578BBDDCD7 /* QSMbuilder_architecture.cpp */; };
+		2CA1659FBA3F1A42B19E7457 /* QSMbuilder_dist2root.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 633B6133215522EBE4D883EE /* QSMbuilder_dist2root.cpp */; };
+		2E11B6E4EF8323FD4535EB6E /* dtm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 314609E1011070E60855BAFC /* dtm.cpp */; };
+		339A0369C58698377883617A /* SeedDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C90A448D82F1F0BB91BD4FF8 /* SeedDetector.cpp */; };
+		34B39242405D5BF8BDAD98FF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B5AF546BF1E9276F1957143 /* main.cpp */; };
+		3A66E506D1E61EA5BC22A5DB /* fitting_circle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8ED5244D47A3B11D7DAAE276 /* fitting_circle.cpp */; };
+		4ED3B199F8722F618EC61B75 /* QSMbuilder_skeleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 462352664CFF30FBBA2CB321 /* QSMbuilder_skeleton.cpp */; };
+		551E8C2F8999D204E8606B90 /* fitting_fourier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEF0277ACF443F3C0A982DC8 /* fitting_fourier.cpp */; };
 		57CAEB9F7490E7884AF4EEB6 /* segment_instance_api.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 922EE2663BE87693C2AC1B32 /* segment_instance_api.cpp */; };
+		58E3E0A25EF63CEAA3A1024A /* hporro/index.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62F6E638BA3FF2F81FFD0825 /* hporro/index.cpp */; };
+		5A4A641DEC464CFAE284BCF6 /* SeedDetector_cage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F37D0627DE53CDD7D657066 /* SeedDetector_cage.cpp */; };
+		5D487BD21F37CAE94E9037F5 /* allometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91DFA56D49AFEDBB42FE1612 /* allometry.cpp */; };
+		60A7268155CB3D7C8EBA4F37 /* hporro/delaunay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 903A83EBC6AE0959CA695700 /* hporro/delaunay.cpp */; };
+		60F2CA237C3C40B030BA3009 /* PointCloudDefault.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 696BFEFC22DDE76F319C0AF0 /* PointCloudDefault.cpp */; };
+		6AA5BF4CC018EE7079A399F8 /* hporro/pred3d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2407450C755EC30CD95889A /* hporro/pred3d.cpp */; };
+		6B4A43D71C4E096B050BA46C /* smooth3d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F37A5E9BE084D7938C0A07F /* smooth3d.cpp */; };
+		6C57D0AB5ADD61DA83875B35 /* QSM_utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 919E4DA7C2187B0A39098AB3 /* QSM_utils.cpp */; };
+		6CE304EC0AB6ADEEE915AA06 /* ptd/PTD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E08393A5D315F827027F598 /* ptd/PTD.cpp */; };
+		725171BA2C7DDAF6676E935E /* knn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ADC1023C50BBB9F73458F4A /* knn.cpp */; };
+		737EA77F12872D5A3C0E6ADA /* QSF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3424D0CAF4C6B6902BB4352 /* QSF.cpp */; };
+		73821AF3AF1EF586FB1B062F /* QSMbuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2BDD56776D4630FBC194B85 /* QSMbuilder.cpp */; };
+		7859ACF337602CE6CE4F13AE /* fitting_ellipse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D479C3229E77CAA7272F2C /* fitting_ellipse.cpp */; };
+		814321AFF5715F33C317BF16 /* QSMbuilder_pipemodel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6B73BD300E65DD5B5FE8233 /* QSMbuilder_pipemodel.cpp */; };
+		85F7830D94447AB76C787B77 /* fitting_multicircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D5B17DBB068791B11E9475D5 /* fitting_multicircle.cpp */; };
+		880CD5616EC729795CFF1153 /* PointCloudDataFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAF57CB1AB118B0124FA87C4 /* PointCloudDataFrame.cpp */; };
+		8AE1F762E45AB6E74C7E585B /* services.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 026D714E88A8879F2723DF05 /* services.cpp */; };
+		8F989BE08AD3EA1FEF16C98C /* SeedDetector_circle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB302EAB6E523F1A5E41BA5A /* SeedDetector_circle.cpp */; };
+		9E4AE74D9B6416705D9EA58A /* QSM_mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC0560D7A5363CD3EEA176EC /* QSM_mesh.cpp */; };
+		9F077AC3C43F2E9FEF126B32 /* segment_ground_api.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC5C8F30EAA57BDB4EED03B /* segment_ground_api.cpp */; };
+		9F5946943AFB99061B323D10 /* fitting_polynomial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D97C760A97C87D643DA3EE2F /* fitting_polynomial.cpp */; };
+		A0528D7618F50AD1A1761D47 /* ransac.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B19DB2589EC731DCAA06E5DD /* ransac.cpp */; };
+		A05D379CA388B2F0C2E64632 /* libqsm/libqsm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A0F15AF92D8E8619C927043 /* libqsm/libqsm.cpp */; };
+		A3906AFC0F333BBE1245DBE2 /* homogeneization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6BA278B304B6A5F18F4C28B /* homogeneization.cpp */; };
+		AD8C4A2544D32BE28072FA70 /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF999EBB9480BFD02229C2D9 /* Graph.cpp */; };
+		AF9C57A17F99F8997557B57F /* QSMbuilder_radius.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B070F227C399B6C33F785AFA /* QSMbuilder_radius.cpp */; };
+		B114AC1826FEA11190118EC4 /* qsf_api.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 692D5D09479FF731E45486B4 /* qsf_api.cpp */; };
+		B5F3A184327D877030653FB5 /* find_seeds_api.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D6E52A3A38B39E6FF741151 /* find_seeds_api.cpp */; };
+		B71848CA4816FD697E4942D9 /* QSMbuilder_cluster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C91148FE8DC5F1DC202B455 /* QSMbuilder_cluster.cpp */; };
+		D4693C7A1509C269327E694E /* libqsf/libqsf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CAD29F6614BE4EC6A4310FC /* libqsf/libqsf.cpp */; };
+		D692CAC970BABB6A3ADC09C1 /* QSMbuilder_utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C89FA3175B0421D409E31D3A /* QSMbuilder_utils.cpp */; };
+		D85114678BEDA05251C44DD4 /* dbscan/dbscan.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE2415B354FF0A1E5D9AEB61 /* dbscan/dbscan.cpp */; };
+		DEA50587D12CD1F341614B5E /* QSM_write.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CFEFBFF47E2098B00CC5937 /* QSM_write.cpp */; };
+		DFB436131A983D9F20EA98EC /* QSMbuilder_smooth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FD86CCEEC83F6C914C1FDC0 /* QSMbuilder_smooth.cpp */; };
 		E30E7A66D349985ED1DA8766 /* segment_overfitting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2907600F89D6397DBD678718 /* segment_overfitting.cpp */; };
 		F11B746C3EA11295E42494E4 /* segment_semantic_api.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C72E0CE3273B4BBE9CE4C959 /* segment_semantic_api.cpp */; };
-		242A56047C871A7415753BEB /* Grid3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B47368ED9F33DDB71CA968FC /* Grid3D.cpp */; };
-		5D487BD21F37CAE94E9037F5 /* allometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91DFA56D49AFEDBB42FE1612 /* allometry.cpp */; };
-		1CB5E6EEBCEE76A85BAFC3AC /* anisotopy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52202A033391BFEFC51C42A7 /* anisotopy.cpp */; };
-		A3906AFC0F333BBE1245DBE2 /* homogeneization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6BA278B304B6A5F18F4C28B /* homogeneization.cpp */; };
-		725171BA2C7DDAF6676E935E /* knn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ADC1023C50BBB9F73458F4A /* knn.cpp */; };
-		017C44221C02AE243782BC02 /* progressbar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F54075B383346589CCEBE011 /* progressbar.cpp */; };
-		A0528D7618F50AD1A1761D47 /* ransac.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B19DB2589EC731DCAA06E5DD /* ransac.cpp */; };
-		8AE1F762E45AB6E74C7E585B /* services.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 026D714E88A8879F2723DF05 /* services.cpp */; };
-		6B4A43D71C4E096B050BA46C /* smooth3d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F37A5E9BE084D7938C0A07F /* smooth3d.cpp */; };
-		FD670240C3D6F46F5BEEDD5C /* sor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1394936DD73325AC60319D86 /* sor.cpp */; };
-		D85114678BEDA05251C44DD4 /* dbscan.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE2415B354FF0A1E5D9AEB61 /* dbscan.cpp */; };
-		60A7268155CB3D7C8EBA4F37 /* delaunay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 903A83EBC6AE0959CA695700 /* delaunay.cpp */; };
-		58E3E0A25EF63CEAA3A1024A /* index.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62F6E638BA3FF2F81FFD0825 /* index.cpp */; };
-		6AA5BF4CC018EE7079A399F8 /* pred3d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2407450C755EC30CD95889A /* pred3d.cpp */; };
-		D4693C7A1509C269327E694E /* libqsf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CAD29F6614BE4EC6A4310FC /* libqsf.cpp */; };
-		A05D379CA388B2F0C2E64632 /* libqsm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A0F15AF92D8E8619C927043 /* libqsm.cpp */; };
-		6CE304EC0AB6ADEEE915AA06 /* PTD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E08393A5D315F827027F598 /* PTD.cpp */; };
-		34B39242405D5BF8BDAD98FF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B5AF546BF1E9276F1957143 /* main.cpp */; };
 		F3D360707E47E21F23FE371D /* libArborCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 723E73F5B8DEC41D3AEE030C /* libArborCore.a */; };
+		FD670240C3D6F46F5BEEDD5C /* sor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1394936DD73325AC60319D86 /* sor.cpp */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DC84B1C2A1F5A7AB31534F37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98F54143AB4E86B28C3AFEE0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E785D27BEE03D67EB88DFF0;
+			remoteInfo = ArborCore;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		314609E1011070E60855BAFC /* dtm.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = dtm.cpp; sourceTree = "<group>"; };
-		8ED5244D47A3B11D7DAAE276 /* fitting_circle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fitting_circle.cpp; sourceTree = "<group>"; };
-		29D479C3229E77CAA7272F2C /* fitting_ellipse.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fitting_ellipse.cpp; sourceTree = "<group>"; };
-		DEF0277ACF443F3C0A982DC8 /* fitting_fourier.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fitting_fourier.cpp; sourceTree = "<group>"; };
-		D5B17DBB068791B11E9475D5 /* fitting_multicircle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fitting_multicircle.cpp; sourceTree = "<group>"; };
-		CFCA3E17B0054FE06D08E13B /* fitting_orbicular.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fitting_orbicular.cpp; sourceTree = "<group>"; };
-		D97C760A97C87D643DA3EE2F /* fitting_polynomial.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fitting_polynomial.cpp; sourceTree = "<group>"; };
-		EAF57CB1AB118B0124FA87C4 /* PointCloudDataFrame.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PointCloudDataFrame.cpp; sourceTree = "<group>"; };
-		696BFEFC22DDE76F319C0AF0 /* PointCloudDefault.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PointCloudDefault.cpp; sourceTree = "<group>"; };
-		C3424D0CAF4C6B6902BB4352 /* QSF.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSF.cpp; sourceTree = "<group>"; };
-		692D5D09479FF731E45486B4 /* qsf_api.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = qsf_api.cpp; sourceTree = "<group>"; };
-		EC0560D7A5363CD3EEA176EC /* QSM_mesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSM_mesh.cpp; sourceTree = "<group>"; };
-		25A47D27D10F054B60E91E4E /* QSM_read.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSM_read.cpp; sourceTree = "<group>"; };
-		919E4DA7C2187B0A39098AB3 /* QSM_utils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSM_utils.cpp; sourceTree = "<group>"; };
-		8CFEFBFF47E2098B00CC5937 /* QSM_write.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSM_write.cpp; sourceTree = "<group>"; };
-		D2BDD56776D4630FBC194B85 /* QSMbuilder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSMbuilder.cpp; sourceTree = "<group>"; };
-		3EE373AE64CDF9578BBDDCD7 /* QSMbuilder_architecture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSMbuilder_architecture.cpp; sourceTree = "<group>"; };
-		F728C2A2BFAE1B1B642E1BD7 /* QSMbuilder_butt.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSMbuilder_butt.cpp; sourceTree = "<group>"; };
-		4C91148FE8DC5F1DC202B455 /* QSMbuilder_cluster.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSMbuilder_cluster.cpp; sourceTree = "<group>"; };
-		633B6133215522EBE4D883EE /* QSMbuilder_dist2root.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSMbuilder_dist2root.cpp; sourceTree = "<group>"; };
-		B6B73BD300E65DD5B5FE8233 /* QSMbuilder_pipemodel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSMbuilder_pipemodel.cpp; sourceTree = "<group>"; };
-		6E78E4A89C5BAB2305A39CB0 /* QSMbuilder_prolongation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSMbuilder_prolongation.cpp; sourceTree = "<group>"; };
-		B070F227C399B6C33F785AFA /* QSMbuilder_radius.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSMbuilder_radius.cpp; sourceTree = "<group>"; };
-		462352664CFF30FBBA2CB321 /* QSMbuilder_skeleton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSMbuilder_skeleton.cpp; sourceTree = "<group>"; };
-		6FD86CCEEC83F6C914C1FDC0 /* QSMbuilder_smooth.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSMbuilder_smooth.cpp; sourceTree = "<group>"; };
-		C89FA3175B0421D409E31D3A /* QSMbuilder_utils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSMbuilder_utils.cpp; sourceTree = "<group>"; };
-		FEEE25B6BDF424A326DDE4A5 /* qsm_api.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = qsm_api.cpp; sourceTree = "<group>"; };
-		C90A448D82F1F0BB91BD4FF8 /* SeedDetector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SeedDetector.cpp; sourceTree = "<group>"; };
-		0F37D0627DE53CDD7D657066 /* SeedDetector_cage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SeedDetector_cage.cpp; sourceTree = "<group>"; };
-		DB302EAB6E523F1A5E41BA5A /* SeedDetector_circle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SeedDetector_circle.cpp; sourceTree = "<group>"; };
-		6D6E52A3A38B39E6FF741151 /* find_seeds_api.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = find_seeds_api.cpp; sourceTree = "<group>"; };
-		EF999EBB9480BFD02229C2D9 /* Graph.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Graph.cpp; sourceTree = "<group>"; };
-		5C851A12845D8A0BF170FF3F /* GraphBuilder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GraphBuilder.cpp; sourceTree = "<group>"; };
-		7DC5C8F30EAA57BDB4EED03B /* segment_ground_api.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = segment_ground_api.cpp; sourceTree = "<group>"; };
-		922EE2663BE87693C2AC1B32 /* segment_instance_api.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = segment_instance_api.cpp; sourceTree = "<group>"; };
-		2907600F89D6397DBD678718 /* segment_overfitting.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = segment_overfitting.cpp; sourceTree = "<group>"; };
-		C72E0CE3273B4BBE9CE4C959 /* segment_semantic_api.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = segment_semantic_api.cpp; sourceTree = "<group>"; };
-		B47368ED9F33DDB71CA968FC /* Grid3D.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Grid3D.cpp; sourceTree = "<group>"; };
-		91DFA56D49AFEDBB42FE1612 /* allometry.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = allometry.cpp; sourceTree = "<group>"; };
-		52202A033391BFEFC51C42A7 /* anisotopy.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = anisotopy.cpp; sourceTree = "<group>"; };
-		A6BA278B304B6A5F18F4C28B /* homogeneization.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = homogeneization.cpp; sourceTree = "<group>"; };
-		2ADC1023C50BBB9F73458F4A /* knn.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = knn.cpp; sourceTree = "<group>"; };
-		F54075B383346589CCEBE011 /* progressbar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = progressbar.cpp; sourceTree = "<group>"; };
-		B19DB2589EC731DCAA06E5DD /* ransac.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ransac.cpp; sourceTree = "<group>"; };
 		026D714E88A8879F2723DF05 /* services.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = services.cpp; sourceTree = "<group>"; };
-		3F37A5E9BE084D7938C0A07F /* smooth3d.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = smooth3d.cpp; sourceTree = "<group>"; };
-		1394936DD73325AC60319D86 /* sor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sor.cpp; sourceTree = "<group>"; };
-		AE2415B354FF0A1E5D9AEB61 /* dbscan.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "dbscan/dbscan.cpp"; sourceTree = "<group>"; };
-		903A83EBC6AE0959CA695700 /* delaunay.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "hporro/delaunay.cpp"; sourceTree = "<group>"; };
-		62F6E638BA3FF2F81FFD0825 /* index.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "hporro/index.cpp"; sourceTree = "<group>"; };
-		C2407450C755EC30CD95889A /* pred3d.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "hporro/pred3d.cpp"; sourceTree = "<group>"; };
-		5CAD29F6614BE4EC6A4310FC /* libqsf.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "libqsf/libqsf.cpp"; sourceTree = "<group>"; };
-		3A0F15AF92D8E8619C927043 /* libqsm.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "libqsm/libqsm.cpp"; sourceTree = "<group>"; };
-		6E08393A5D315F827027F598 /* PTD.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "ptd/PTD.cpp"; sourceTree = "<group>"; };
-		10825670E467B3EAA2357C60 /* arbor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arbor.h; sourceTree = "<group>"; };
-		60B8C7252ADE769AB6EF8DF1 /* fitting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fitting.h; sourceTree = "<group>"; };
-		118EAC836680786E3D0B8C5C /* fitting_circle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fitting_circle.h; sourceTree = "<group>"; };
-		1E26D31A65D0D5131F9AEB56 /* fitting_circle_math.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fitting_circle_math.h; sourceTree = "<group>"; };
-		3EEEAA249927EC385CF25074 /* fitting_criteria.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fitting_criteria.h; sourceTree = "<group>"; };
-		681D357F0CEAE07EB0C657BA /* fitting_ellipse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fitting_ellipse.h; sourceTree = "<group>"; };
-		DC724225F53D6FEB0361635B /* fitting_fourier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fitting_fourier.h; sourceTree = "<group>"; };
 		05588C645277320720397D35 /* fitting_multicircle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fitting_multicircle.h; sourceTree = "<group>"; };
-		D9179D17F1A9A9BB06DDB00D /* fitting_orbicular.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fitting_orbicular.h; sourceTree = "<group>"; };
-		84D05EC33990322CCF69CAF2 /* fitting_polynomial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fitting_polynomial.h; sourceTree = "<group>"; };
-		600701342314B5082DACBFDD /* fitting_quality.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fitting_quality.h; sourceTree = "<group>"; };
-		232CD4DD40A017C53605DD2B /* fitting_strategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fitting_strategy.h; sourceTree = "<group>"; };
-		20E50E2099654EC4BC52B3D6 /* fitting_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fitting_types.h; sourceTree = "<group>"; };
-		5E2F323A4E503EBC6D748BD3 /* myomp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myomp.h; sourceTree = "<group>"; };
-		D929B2DD6D90F112620FF9F1 /* nanoflann.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nanoflann.h; sourceTree = "<group>"; };
-		13E925E9D74ADA42807EC991 /* PointCloud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PointCloud.h; sourceTree = "<group>"; };
-		8DA265680FF9BC7F789667AD /* PointCloudBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PointCloudBase.h; sourceTree = "<group>"; };
-		3B557EE27D47CEA63CD3DDF0 /* PointCloudDataFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PointCloudDataFrame.h; sourceTree = "<group>"; };
-		63FFA1E337122582AC2BCADB /* PointCloudDefault.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PointCloudDefault.h; sourceTree = "<group>"; };
-		205553C254A8E6E623EB265D /* QSF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QSF.h; sourceTree = "<group>"; };
-		DCE65ECDF31632CED5CE1F77 /* DirectedGraph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DirectedGraph.h; sourceTree = "<group>"; };
 		0792ACBC88206F4C63BC3B27 /* QSM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QSM.h; sourceTree = "<group>"; };
-		CD40412233BF346029301C4E /* QSMbuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QSMbuilder.h; sourceTree = "<group>"; };
-		4E3812E3F12DF4EE4DB1C2F0 /* SeedDetector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeedDetector.h; sourceTree = "<group>"; };
+		0F37D0627DE53CDD7D657066 /* SeedDetector_cage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SeedDetector_cage.cpp; sourceTree = "<group>"; };
 		0F3D519451D1E53F6F5EF0E5 /* Graph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
-		1155926E0A1B4170E0DB6C6B /* GraphBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphBuilder.h; sourceTree = "<group>"; };
 		1032DC882EF037BA399CF72E /* segment_overfitting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = segment_overfitting.h; sourceTree = "<group>"; };
-		B47EF62739E3BC1E474D1895 /* Grid3D.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Grid3D.h; sourceTree = "<group>"; };
-		9C3234AC768BF8C457252810 /* allometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = allometry.h; sourceTree = "<group>"; };
+		10825670E467B3EAA2357C60 /* arbor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arbor.h; sourceTree = "<group>"; };
+		1155926E0A1B4170E0DB6C6B /* GraphBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphBuilder.h; sourceTree = "<group>"; };
+		118EAC836680786E3D0B8C5C /* fitting_circle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fitting_circle.h; sourceTree = "<group>"; };
+		1394936DD73325AC60319D86 /* sor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sor.cpp; sourceTree = "<group>"; };
+		13E925E9D74ADA42807EC991 /* PointCloud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PointCloud.h; sourceTree = "<group>"; };
+		19784082BF892E72C0EDB38E /* libqsm/libqsm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libqsm/libqsm.h; sourceTree = "<group>"; };
+		1E26D31A65D0D5131F9AEB56 /* fitting_circle_math.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fitting_circle_math.h; sourceTree = "<group>"; };
+		205553C254A8E6E623EB265D /* QSF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QSF.h; sourceTree = "<group>"; };
+		20E50E2099654EC4BC52B3D6 /* fitting_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fitting_types.h; sourceTree = "<group>"; };
+		232CD4DD40A017C53605DD2B /* fitting_strategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fitting_strategy.h; sourceTree = "<group>"; };
+		25A47D27D10F054B60E91E4E /* QSM_read.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSM_read.cpp; sourceTree = "<group>"; };
+		2907600F89D6397DBD678718 /* segment_overfitting.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = segment_overfitting.cpp; sourceTree = "<group>"; };
+		29D479C3229E77CAA7272F2C /* fitting_ellipse.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fitting_ellipse.cpp; sourceTree = "<group>"; };
+		2ADC1023C50BBB9F73458F4A /* knn.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = knn.cpp; sourceTree = "<group>"; };
+		314609E1011070E60855BAFC /* dtm.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = dtm.cpp; sourceTree = "<group>"; };
+		336A38C5886A1EC6EC1867B8 /* hporro/constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hporro/constants.h; sourceTree = "<group>"; };
 		38838A90AA6A4FCF9F91355C /* progressbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = progressbar.h; sourceTree = "<group>"; };
-		86B9884FD8DF8DB0E7DCD64B /* ransac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ransac.h; sourceTree = "<group>"; };
-		9B69639825097B0B9378C404 /* services.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = services.h; sourceTree = "<group>"; };
-		CF27F77CE2690213F200C148 /* dbscan.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "dbscan/dbscan.hpp"; sourceTree = "<group>"; };
-		336A38C5886A1EC6EC1867B8 /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "hporro/constants.h"; sourceTree = "<group>"; };
-		45EDD30F545B378287ABB626 /* delaunay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "hporro/delaunay.h"; sourceTree = "<group>"; };
-		8D4D01E02071B081A0BD4A43 /* geometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "hporro/geometry.h"; sourceTree = "<group>"; };
-		73CE633F3D94FE8C09802151 /* index.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "hporro/index.h"; sourceTree = "<group>"; };
-		E2C5FDEC280B6FFDBD2D8037 /* pred3d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "hporro/pred3d.h"; sourceTree = "<group>"; };
-		A2D5BF2D188B6F32A5940BD2 /* libqsf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libqsf/libqsf.h"; sourceTree = "<group>"; };
-		19784082BF892E72C0EDB38E /* libqsm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libqsm/libqsm.h"; sourceTree = "<group>"; };
-		AD561A9BBC40E44F698B2C35 /* PTD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ptd/PTD.h"; sourceTree = "<group>"; };
+		3A0F15AF92D8E8619C927043 /* libqsm/libqsm.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = libqsm/libqsm.cpp; sourceTree = "<group>"; };
+		3B557EE27D47CEA63CD3DDF0 /* PointCloudDataFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PointCloudDataFrame.h; sourceTree = "<group>"; };
+		3EE373AE64CDF9578BBDDCD7 /* QSMbuilder_architecture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSMbuilder_architecture.cpp; sourceTree = "<group>"; };
+		3EEEAA249927EC385CF25074 /* fitting_criteria.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fitting_criteria.h; sourceTree = "<group>"; };
+		3F37A5E9BE084D7938C0A07F /* smooth3d.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = smooth3d.cpp; sourceTree = "<group>"; };
+		45EDD30F545B378287ABB626 /* hporro/delaunay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hporro/delaunay.h; sourceTree = "<group>"; };
+		462352664CFF30FBBA2CB321 /* QSMbuilder_skeleton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSMbuilder_skeleton.cpp; sourceTree = "<group>"; };
+		4C91148FE8DC5F1DC202B455 /* QSMbuilder_cluster.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSMbuilder_cluster.cpp; sourceTree = "<group>"; };
+		4E3812E3F12DF4EE4DB1C2F0 /* SeedDetector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeedDetector.h; sourceTree = "<group>"; };
+		52202A033391BFEFC51C42A7 /* anisotopy.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = anisotopy.cpp; sourceTree = "<group>"; };
 		5B5AF546BF1E9276F1957143 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		5C851A12845D8A0BF170FF3F /* GraphBuilder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GraphBuilder.cpp; sourceTree = "<group>"; };
+		5CAD29F6614BE4EC6A4310FC /* libqsf/libqsf.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = libqsf/libqsf.cpp; sourceTree = "<group>"; };
+		5E2F323A4E503EBC6D748BD3 /* myomp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myomp.h; sourceTree = "<group>"; };
+		600701342314B5082DACBFDD /* fitting_quality.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fitting_quality.h; sourceTree = "<group>"; };
+		60B8C7252ADE769AB6EF8DF1 /* fitting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fitting.h; sourceTree = "<group>"; };
+		62F6E638BA3FF2F81FFD0825 /* hporro/index.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = hporro/index.cpp; sourceTree = "<group>"; };
+		633B6133215522EBE4D883EE /* QSMbuilder_dist2root.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSMbuilder_dist2root.cpp; sourceTree = "<group>"; };
+		63FFA1E337122582AC2BCADB /* PointCloudDefault.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PointCloudDefault.h; sourceTree = "<group>"; };
+		681D357F0CEAE07EB0C657BA /* fitting_ellipse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fitting_ellipse.h; sourceTree = "<group>"; };
+		692D5D09479FF731E45486B4 /* qsf_api.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = qsf_api.cpp; sourceTree = "<group>"; };
+		696BFEFC22DDE76F319C0AF0 /* PointCloudDefault.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PointCloudDefault.cpp; sourceTree = "<group>"; };
+		6D6E52A3A38B39E6FF741151 /* find_seeds_api.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = find_seeds_api.cpp; sourceTree = "<group>"; };
+		6E08393A5D315F827027F598 /* ptd/PTD.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ptd/PTD.cpp; sourceTree = "<group>"; };
+		6E78E4A89C5BAB2305A39CB0 /* QSMbuilder_prolongation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSMbuilder_prolongation.cpp; sourceTree = "<group>"; };
+		6FD86CCEEC83F6C914C1FDC0 /* QSMbuilder_smooth.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSMbuilder_smooth.cpp; sourceTree = "<group>"; };
 		723E73F5B8DEC41D3AEE030C /* libArborCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libArborCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		73CE633F3D94FE8C09802151 /* hporro/index.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hporro/index.h; sourceTree = "<group>"; };
+		7DC5C8F30EAA57BDB4EED03B /* segment_ground_api.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = segment_ground_api.cpp; sourceTree = "<group>"; };
+		831AB5713076F93200E81988 /* allometry.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = allometry.R; path = ../R/allometry.R; sourceTree = SOURCE_ROOT; };
+		831AB5723076F93200E81988 /* arbor_experimental.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = arbor_experimental.R; path = ../R/arbor_experimental.R; sourceTree = SOURCE_ROOT; };
+		831AB5733076F93200E81988 /* arbor_parameters.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = arbor_parameters.R; path = ../R/arbor_parameters.R; sourceTree = SOURCE_ROOT; };
+		831AB5743076F93200E81988 /* crs.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = crs.R; path = ../R/crs.R; sourceTree = SOURCE_ROOT; };
+		831AB5753076F93200E81988 /* qsf.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = qsf.R; path = ../R/qsf.R; sourceTree = SOURCE_ROOT; };
+		831AB5763076F93200E81988 /* qsf_filter.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = qsf_filter.R; path = ../R/qsf_filter.R; sourceTree = SOURCE_ROOT; };
+		831AB5773076F93200E81988 /* qsf_io.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = qsf_io.R; path = ../R/qsf_io.R; sourceTree = SOURCE_ROOT; };
+		831AB5783076F93200E81988 /* qsf_log.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = qsf_log.R; path = ../R/qsf_log.R; sourceTree = SOURCE_ROOT; };
+		831AB5793076F96D00E81988 /* qsm.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = qsm.R; path = ../R/qsm.R; sourceTree = SOURCE_ROOT; };
+		831AB57A3076F96D00E81988 /* qsm_dbh.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = qsm_dbh.R; path = ../R/qsm_dbh.R; sourceTree = SOURCE_ROOT; };
+		831AB57B3076F96D00E81988 /* qsm_io.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = qsm_io.R; path = ../R/qsm_io.R; sourceTree = SOURCE_ROOT; };
+		831AB57C3076F96D00E81988 /* qsm_stat.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = qsm_stat.R; path = ../R/qsm_stat.R; sourceTree = SOURCE_ROOT; };
+		831AB57D3076F96D00E81988 /* qsm_subset.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = qsm_subset.R; path = ../R/qsm_subset.R; sourceTree = SOURCE_ROOT; };
+		831AB57E3076F96D00E81988 /* qsm_tools.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = qsm_tools.R; path = ../R/qsm_tools.R; sourceTree = SOURCE_ROOT; };
+		831AB57F3076F9C600E81988 /* seeds_find.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = seeds_find.R; path = ../R/seeds_find.R; sourceTree = SOURCE_ROOT; };
+		831AB5803076F9C600E81988 /* segment_anisotropy.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = segment_anisotropy.R; path = ../R/segment_anisotropy.R; sourceTree = SOURCE_ROOT; };
+		831AB5813076F9C600E81988 /* segment_decimation.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = segment_decimation.R; path = ../R/segment_decimation.R; sourceTree = SOURCE_ROOT; };
+		831AB5823076F9C600E81988 /* segment_flag.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = segment_flag.R; path = ../R/segment_flag.R; sourceTree = SOURCE_ROOT; };
+		831AB5833076F9C600E81988 /* segment_ground.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = segment_ground.R; path = ../R/segment_ground.R; sourceTree = SOURCE_ROOT; };
+		831AB5843076F9C600E81988 /* segment_instance.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = segment_instance.R; path = ../R/segment_instance.R; sourceTree = SOURCE_ROOT; };
+		831AB5853076F9C600E81988 /* segment_overfitting.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = segment_overfitting.R; path = ../R/segment_overfitting.R; sourceTree = SOURCE_ROOT; };
+		831AB5863076F9C600E81988 /* segment_plot.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = segment_plot.R; path = ../R/segment_plot.R; sourceTree = SOURCE_ROOT; };
+		831AB5873076F9C600E81988 /* segment_range_filter.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = segment_range_filter.R; path = ../R/segment_range_filter.R; sourceTree = SOURCE_ROOT; };
+		831AB5883076F9C600E81988 /* segment_semantic.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = segment_semantic.R; path = ../R/segment_semantic.R; sourceTree = SOURCE_ROOT; };
+		831AB5893076F9C600E81988 /* segment_transfert_attributes.R */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = segment_transfert_attributes.R; path = ../R/segment_transfert_attributes.R; sourceTree = SOURCE_ROOT; };
+		84D05EC33990322CCF69CAF2 /* fitting_polynomial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fitting_polynomial.h; sourceTree = "<group>"; };
+		86B9884FD8DF8DB0E7DCD64B /* ransac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ransac.h; sourceTree = "<group>"; };
+		8CFEFBFF47E2098B00CC5937 /* QSM_write.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSM_write.cpp; sourceTree = "<group>"; };
+		8D4D01E02071B081A0BD4A43 /* hporro/geometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hporro/geometry.h; sourceTree = "<group>"; };
+		8DA265680FF9BC7F789667AD /* PointCloudBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PointCloudBase.h; sourceTree = "<group>"; };
+		8ED5244D47A3B11D7DAAE276 /* fitting_circle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fitting_circle.cpp; sourceTree = "<group>"; };
+		903A83EBC6AE0959CA695700 /* hporro/delaunay.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = hporro/delaunay.cpp; sourceTree = "<group>"; };
+		919E4DA7C2187B0A39098AB3 /* QSM_utils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSM_utils.cpp; sourceTree = "<group>"; };
+		91DFA56D49AFEDBB42FE1612 /* allometry.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = allometry.cpp; sourceTree = "<group>"; };
+		922EE2663BE87693C2AC1B32 /* segment_instance_api.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = segment_instance_api.cpp; sourceTree = "<group>"; };
+		9B69639825097B0B9378C404 /* services.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = services.h; sourceTree = "<group>"; };
+		9C3234AC768BF8C457252810 /* allometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = allometry.h; sourceTree = "<group>"; };
+		A2D5BF2D188B6F32A5940BD2 /* libqsf/libqsf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libqsf/libqsf.h; sourceTree = "<group>"; };
+		A6BA278B304B6A5F18F4C28B /* homogeneization.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = homogeneization.cpp; sourceTree = "<group>"; };
+		AD561A9BBC40E44F698B2C35 /* ptd/PTD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ptd/PTD.h; sourceTree = "<group>"; };
+		AE2415B354FF0A1E5D9AEB61 /* dbscan/dbscan.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = dbscan/dbscan.cpp; sourceTree = "<group>"; };
+		B070F227C399B6C33F785AFA /* QSMbuilder_radius.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSMbuilder_radius.cpp; sourceTree = "<group>"; };
+		B19DB2589EC731DCAA06E5DD /* ransac.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ransac.cpp; sourceTree = "<group>"; };
+		B47368ED9F33DDB71CA968FC /* Grid3D.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Grid3D.cpp; sourceTree = "<group>"; };
+		B47EF62739E3BC1E474D1895 /* Grid3D.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Grid3D.h; sourceTree = "<group>"; };
+		B6B73BD300E65DD5B5FE8233 /* QSMbuilder_pipemodel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSMbuilder_pipemodel.cpp; sourceTree = "<group>"; };
+		C2407450C755EC30CD95889A /* hporro/pred3d.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = hporro/pred3d.cpp; sourceTree = "<group>"; };
+		C3424D0CAF4C6B6902BB4352 /* QSF.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSF.cpp; sourceTree = "<group>"; };
+		C72E0CE3273B4BBE9CE4C959 /* segment_semantic_api.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = segment_semantic_api.cpp; sourceTree = "<group>"; };
+		C89FA3175B0421D409E31D3A /* QSMbuilder_utils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSMbuilder_utils.cpp; sourceTree = "<group>"; };
+		C90A448D82F1F0BB91BD4FF8 /* SeedDetector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SeedDetector.cpp; sourceTree = "<group>"; };
+		CD40412233BF346029301C4E /* QSMbuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QSMbuilder.h; sourceTree = "<group>"; };
+		CF27F77CE2690213F200C148 /* dbscan/dbscan.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = dbscan/dbscan.hpp; sourceTree = "<group>"; };
+		CFCA3E17B0054FE06D08E13B /* fitting_orbicular.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fitting_orbicular.cpp; sourceTree = "<group>"; };
+		D2BDD56776D4630FBC194B85 /* QSMbuilder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSMbuilder.cpp; sourceTree = "<group>"; };
+		D5B17DBB068791B11E9475D5 /* fitting_multicircle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fitting_multicircle.cpp; sourceTree = "<group>"; };
+		D9179D17F1A9A9BB06DDB00D /* fitting_orbicular.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fitting_orbicular.h; sourceTree = "<group>"; };
+		D929B2DD6D90F112620FF9F1 /* nanoflann.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nanoflann.h; sourceTree = "<group>"; };
+		D97C760A97C87D643DA3EE2F /* fitting_polynomial.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fitting_polynomial.cpp; sourceTree = "<group>"; };
+		DB302EAB6E523F1A5E41BA5A /* SeedDetector_circle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SeedDetector_circle.cpp; sourceTree = "<group>"; };
+		DC724225F53D6FEB0361635B /* fitting_fourier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fitting_fourier.h; sourceTree = "<group>"; };
+		DCE65ECDF31632CED5CE1F77 /* DirectedGraph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DirectedGraph.h; sourceTree = "<group>"; };
 		DD007AAFFE657B69F78CDD40 /* arbor-link */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "arbor-link"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEF0277ACF443F3C0A982DC8 /* fitting_fourier.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fitting_fourier.cpp; sourceTree = "<group>"; };
+		E2C5FDEC280B6FFDBD2D8037 /* hporro/pred3d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hporro/pred3d.h; sourceTree = "<group>"; };
+		EAF57CB1AB118B0124FA87C4 /* PointCloudDataFrame.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PointCloudDataFrame.cpp; sourceTree = "<group>"; };
+		EC0560D7A5363CD3EEA176EC /* QSM_mesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSM_mesh.cpp; sourceTree = "<group>"; };
+		EF999EBB9480BFD02229C2D9 /* Graph.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Graph.cpp; sourceTree = "<group>"; };
+		F54075B383346589CCEBE011 /* progressbar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = progressbar.cpp; sourceTree = "<group>"; };
+		F728C2A2BFAE1B1B642E1BD7 /* QSMbuilder_butt.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSMbuilder_butt.cpp; sourceTree = "<group>"; };
+		FEEE25B6BDF424A326DDE4A5 /* qsm_api.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = qsm_api.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F94563BEB1A2B899941C7DF3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		BD80B4108AE7D05364B48A52 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -182,15 +210,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F94563BEB1A2B899941C7DF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E7C2EE298C8006F9B71A3C8C /* api */ = {
+		049092222BDEFF38C58D6C5B /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				10825670E467B3EAA2357C60 /* arbor.h */,
+				91DFA56D49AFEDBB42FE1612 /* allometry.cpp */,
+				9C3234AC768BF8C457252810 /* allometry.h */,
+				52202A033391BFEFC51C42A7 /* anisotopy.cpp */,
+				B47368ED9F33DDB71CA968FC /* Grid3D.cpp */,
+				B47EF62739E3BC1E474D1895 /* Grid3D.h */,
+				A6BA278B304B6A5F18F4C28B /* homogeneization.cpp */,
+				2ADC1023C50BBB9F73458F4A /* knn.cpp */,
+				F54075B383346589CCEBE011 /* progressbar.cpp */,
+				38838A90AA6A4FCF9F91355C /* progressbar.h */,
+				B19DB2589EC731DCAA06E5DD /* ransac.cpp */,
+				86B9884FD8DF8DB0E7DCD64B /* ransac.h */,
+				026D714E88A8879F2723DF05 /* services.cpp */,
+				9B69639825097B0B9378C404 /* services.h */,
+				3F37A5E9BE084D7938C0A07F /* smooth3d.cpp */,
+				1394936DD73325AC60319D86 /* sor.cpp */,
 			);
-			path = api;
+			path = utils;
 			sourceTree = "<group>";
 		};
 		0687D3BAF66205D5358431EF /* dtm */ = {
@@ -201,37 +250,14 @@
 			path = dtm;
 			sourceTree = "<group>";
 		};
-		7CA717BB92B68E6C1804339E /* fitting */ = {
+		0FD8B48A5D3FBFDBBDBDFDF7 /* qsf */ = {
 			isa = PBXGroup;
 			children = (
-				60B8C7252ADE769AB6EF8DF1 /* fitting.h */,
-				8ED5244D47A3B11D7DAAE276 /* fitting_circle.cpp */,
-				118EAC836680786E3D0B8C5C /* fitting_circle.h */,
-				1E26D31A65D0D5131F9AEB56 /* fitting_circle_math.h */,
-				3EEEAA249927EC385CF25074 /* fitting_criteria.h */,
-				29D479C3229E77CAA7272F2C /* fitting_ellipse.cpp */,
-				681D357F0CEAE07EB0C657BA /* fitting_ellipse.h */,
-				DEF0277ACF443F3C0A982DC8 /* fitting_fourier.cpp */,
-				DC724225F53D6FEB0361635B /* fitting_fourier.h */,
-				D5B17DBB068791B11E9475D5 /* fitting_multicircle.cpp */,
-				05588C645277320720397D35 /* fitting_multicircle.h */,
-				CFCA3E17B0054FE06D08E13B /* fitting_orbicular.cpp */,
-				D9179D17F1A9A9BB06DDB00D /* fitting_orbicular.h */,
-				D97C760A97C87D643DA3EE2F /* fitting_polynomial.cpp */,
-				84D05EC33990322CCF69CAF2 /* fitting_polynomial.h */,
-				600701342314B5082DACBFDD /* fitting_quality.h */,
-				232CD4DD40A017C53605DD2B /* fitting_strategy.h */,
-				20E50E2099654EC4BC52B3D6 /* fitting_types.h */,
+				C3424D0CAF4C6B6902BB4352 /* QSF.cpp */,
+				205553C254A8E6E623EB265D /* QSF.h */,
+				692D5D09479FF731E45486B4 /* qsf_api.cpp */,
 			);
-			path = fitting;
-			sourceTree = "<group>";
-		};
-		66CE9ED0811B0F93017DAB23 /* nanoflann */ = {
-			isa = PBXGroup;
-			children = (
-				D929B2DD6D90F112620FF9F1 /* nanoflann.h */,
-			);
-			path = nanoflann;
+			path = qsf;
 			sourceTree = "<group>";
 		};
 		17523129882930694C0E3D2F /* pointcloud */ = {
@@ -245,42 +271,6 @@
 				63FFA1E337122582AC2BCADB /* PointCloudDefault.h */,
 			);
 			path = pointcloud;
-			sourceTree = "<group>";
-		};
-		0FD8B48A5D3FBFDBBDBDFDF7 /* qsf */ = {
-			isa = PBXGroup;
-			children = (
-				C3424D0CAF4C6B6902BB4352 /* QSF.cpp */,
-				205553C254A8E6E623EB265D /* QSF.h */,
-				692D5D09479FF731E45486B4 /* qsf_api.cpp */,
-			);
-			path = qsf;
-			sourceTree = "<group>";
-		};
-		3744A8AC8407E3A49BABC700 /* qsm */ = {
-			isa = PBXGroup;
-			children = (
-				DCE65ECDF31632CED5CE1F77 /* DirectedGraph.h */,
-				0792ACBC88206F4C63BC3B27 /* QSM.h */,
-				FEEE25B6BDF424A326DDE4A5 /* qsm_api.cpp */,
-				EC0560D7A5363CD3EEA176EC /* QSM_mesh.cpp */,
-				25A47D27D10F054B60E91E4E /* QSM_read.cpp */,
-				919E4DA7C2187B0A39098AB3 /* QSM_utils.cpp */,
-				8CFEFBFF47E2098B00CC5937 /* QSM_write.cpp */,
-				D2BDD56776D4630FBC194B85 /* QSMbuilder.cpp */,
-				CD40412233BF346029301C4E /* QSMbuilder.h */,
-				3EE373AE64CDF9578BBDDCD7 /* QSMbuilder_architecture.cpp */,
-				F728C2A2BFAE1B1B642E1BD7 /* QSMbuilder_butt.cpp */,
-				4C91148FE8DC5F1DC202B455 /* QSMbuilder_cluster.cpp */,
-				633B6133215522EBE4D883EE /* QSMbuilder_dist2root.cpp */,
-				B6B73BD300E65DD5B5FE8233 /* QSMbuilder_pipemodel.cpp */,
-				6E78E4A89C5BAB2305A39CB0 /* QSMbuilder_prolongation.cpp */,
-				B070F227C399B6C33F785AFA /* QSMbuilder_radius.cpp */,
-				462352664CFF30FBBA2CB321 /* QSMbuilder_skeleton.cpp */,
-				6FD86CCEEC83F6C914C1FDC0 /* QSMbuilder_smooth.cpp */,
-				C89FA3175B0421D409E31D3A /* QSMbuilder_utils.cpp */,
-			);
-			path = qsm;
 			sourceTree = "<group>";
 		};
 		2275A5DDEE787E2A8998D23F /* seed */ = {
@@ -311,49 +301,136 @@
 			path = segment;
 			sourceTree = "<group>";
 		};
-		049092222BDEFF38C58D6C5B /* utils */ = {
+		33FABCE43864BA16A96C1CB2 /* driver */ = {
 			isa = PBXGroup;
 			children = (
-				91DFA56D49AFEDBB42FE1612 /* allometry.cpp */,
-				9C3234AC768BF8C457252810 /* allometry.h */,
-				52202A033391BFEFC51C42A7 /* anisotopy.cpp */,
-				B47368ED9F33DDB71CA968FC /* Grid3D.cpp */,
-				B47EF62739E3BC1E474D1895 /* Grid3D.h */,
-				A6BA278B304B6A5F18F4C28B /* homogeneization.cpp */,
-				2ADC1023C50BBB9F73458F4A /* knn.cpp */,
-				F54075B383346589CCEBE011 /* progressbar.cpp */,
-				38838A90AA6A4FCF9F91355C /* progressbar.h */,
-				B19DB2589EC731DCAA06E5DD /* ransac.cpp */,
-				86B9884FD8DF8DB0E7DCD64B /* ransac.h */,
-				026D714E88A8879F2723DF05 /* services.cpp */,
-				9B69639825097B0B9378C404 /* services.h */,
-				3F37A5E9BE084D7938C0A07F /* smooth3d.cpp */,
-				1394936DD73325AC60319D86 /* sor.cpp */,
+				5B5AF546BF1E9276F1957143 /* main.cpp */,
 			);
-			path = utils;
+			path = driver;
+			sourceTree = "<group>";
+		};
+		3744A8AC8407E3A49BABC700 /* qsm */ = {
+			isa = PBXGroup;
+			children = (
+				DCE65ECDF31632CED5CE1F77 /* DirectedGraph.h */,
+				0792ACBC88206F4C63BC3B27 /* QSM.h */,
+				FEEE25B6BDF424A326DDE4A5 /* qsm_api.cpp */,
+				EC0560D7A5363CD3EEA176EC /* QSM_mesh.cpp */,
+				25A47D27D10F054B60E91E4E /* QSM_read.cpp */,
+				919E4DA7C2187B0A39098AB3 /* QSM_utils.cpp */,
+				8CFEFBFF47E2098B00CC5937 /* QSM_write.cpp */,
+				D2BDD56776D4630FBC194B85 /* QSMbuilder.cpp */,
+				CD40412233BF346029301C4E /* QSMbuilder.h */,
+				3EE373AE64CDF9578BBDDCD7 /* QSMbuilder_architecture.cpp */,
+				F728C2A2BFAE1B1B642E1BD7 /* QSMbuilder_butt.cpp */,
+				4C91148FE8DC5F1DC202B455 /* QSMbuilder_cluster.cpp */,
+				633B6133215522EBE4D883EE /* QSMbuilder_dist2root.cpp */,
+				B6B73BD300E65DD5B5FE8233 /* QSMbuilder_pipemodel.cpp */,
+				6E78E4A89C5BAB2305A39CB0 /* QSMbuilder_prolongation.cpp */,
+				B070F227C399B6C33F785AFA /* QSMbuilder_radius.cpp */,
+				462352664CFF30FBBA2CB321 /* QSMbuilder_skeleton.cpp */,
+				6FD86CCEEC83F6C914C1FDC0 /* QSMbuilder_smooth.cpp */,
+				C89FA3175B0421D409E31D3A /* QSMbuilder_utils.cpp */,
+			);
+			path = qsm;
+			sourceTree = "<group>";
+		};
+		66CE9ED0811B0F93017DAB23 /* nanoflann */ = {
+			isa = PBXGroup;
+			children = (
+				D929B2DD6D90F112620FF9F1 /* nanoflann.h */,
+			);
+			path = nanoflann;
+			sourceTree = "<group>";
+		};
+		7CA717BB92B68E6C1804339E /* fitting */ = {
+			isa = PBXGroup;
+			children = (
+				60B8C7252ADE769AB6EF8DF1 /* fitting.h */,
+				8ED5244D47A3B11D7DAAE276 /* fitting_circle.cpp */,
+				118EAC836680786E3D0B8C5C /* fitting_circle.h */,
+				1E26D31A65D0D5131F9AEB56 /* fitting_circle_math.h */,
+				3EEEAA249927EC385CF25074 /* fitting_criteria.h */,
+				29D479C3229E77CAA7272F2C /* fitting_ellipse.cpp */,
+				681D357F0CEAE07EB0C657BA /* fitting_ellipse.h */,
+				DEF0277ACF443F3C0A982DC8 /* fitting_fourier.cpp */,
+				DC724225F53D6FEB0361635B /* fitting_fourier.h */,
+				D5B17DBB068791B11E9475D5 /* fitting_multicircle.cpp */,
+				05588C645277320720397D35 /* fitting_multicircle.h */,
+				CFCA3E17B0054FE06D08E13B /* fitting_orbicular.cpp */,
+				D9179D17F1A9A9BB06DDB00D /* fitting_orbicular.h */,
+				D97C760A97C87D643DA3EE2F /* fitting_polynomial.cpp */,
+				84D05EC33990322CCF69CAF2 /* fitting_polynomial.h */,
+				600701342314B5082DACBFDD /* fitting_quality.h */,
+				232CD4DD40A017C53605DD2B /* fitting_strategy.h */,
+				20E50E2099654EC4BC52B3D6 /* fitting_types.h */,
+			);
+			path = fitting;
 			sourceTree = "<group>";
 		};
 		82E6132B01BCF6FA94646178 /* vendor */ = {
 			isa = PBXGroup;
 			children = (
-				AE2415B354FF0A1E5D9AEB61 /* dbscan.cpp */,
-				CF27F77CE2690213F200C148 /* dbscan.hpp */,
-				336A38C5886A1EC6EC1867B8 /* constants.h */,
-				903A83EBC6AE0959CA695700 /* delaunay.cpp */,
-				45EDD30F545B378287ABB626 /* delaunay.h */,
-				8D4D01E02071B081A0BD4A43 /* geometry.h */,
-				62F6E638BA3FF2F81FFD0825 /* index.cpp */,
-				73CE633F3D94FE8C09802151 /* index.h */,
-				C2407450C755EC30CD95889A /* pred3d.cpp */,
-				E2C5FDEC280B6FFDBD2D8037 /* pred3d.h */,
-				5CAD29F6614BE4EC6A4310FC /* libqsf.cpp */,
-				A2D5BF2D188B6F32A5940BD2 /* libqsf.h */,
-				3A0F15AF92D8E8619C927043 /* libqsm.cpp */,
-				19784082BF892E72C0EDB38E /* libqsm.h */,
-				6E08393A5D315F827027F598 /* PTD.cpp */,
-				AD561A9BBC40E44F698B2C35 /* PTD.h */,
+				AE2415B354FF0A1E5D9AEB61 /* dbscan/dbscan.cpp */,
+				CF27F77CE2690213F200C148 /* dbscan/dbscan.hpp */,
+				336A38C5886A1EC6EC1867B8 /* hporro/constants.h */,
+				903A83EBC6AE0959CA695700 /* hporro/delaunay.cpp */,
+				45EDD30F545B378287ABB626 /* hporro/delaunay.h */,
+				8D4D01E02071B081A0BD4A43 /* hporro/geometry.h */,
+				62F6E638BA3FF2F81FFD0825 /* hporro/index.cpp */,
+				73CE633F3D94FE8C09802151 /* hporro/index.h */,
+				C2407450C755EC30CD95889A /* hporro/pred3d.cpp */,
+				E2C5FDEC280B6FFDBD2D8037 /* hporro/pred3d.h */,
+				5CAD29F6614BE4EC6A4310FC /* libqsf/libqsf.cpp */,
+				A2D5BF2D188B6F32A5940BD2 /* libqsf/libqsf.h */,
+				3A0F15AF92D8E8619C927043 /* libqsm/libqsm.cpp */,
+				19784082BF892E72C0EDB38E /* libqsm/libqsm.h */,
+				6E08393A5D315F827027F598 /* ptd/PTD.cpp */,
+				AD561A9BBC40E44F698B2C35 /* ptd/PTD.h */,
 			);
 			path = vendor;
+			sourceTree = "<group>";
+		};
+		831AB56F3076F71600E81988 /* R */ = {
+			isa = PBXGroup;
+			children = (
+				831AB5713076F93200E81988 /* allometry.R */,
+				831AB5723076F93200E81988 /* arbor_experimental.R */,
+				831AB5733076F93200E81988 /* arbor_parameters.R */,
+				831AB5743076F93200E81988 /* crs.R */,
+				831AB5753076F93200E81988 /* qsf.R */,
+				831AB5763076F93200E81988 /* qsf_filter.R */,
+				831AB5773076F93200E81988 /* qsf_io.R */,
+				831AB5783076F93200E81988 /* qsf_log.R */,
+				831AB5793076F96D00E81988 /* qsm.R */,
+				831AB57A3076F96D00E81988 /* qsm_dbh.R */,
+				831AB57B3076F96D00E81988 /* qsm_io.R */,
+				831AB57C3076F96D00E81988 /* qsm_stat.R */,
+				831AB57D3076F96D00E81988 /* qsm_subset.R */,
+				831AB57E3076F96D00E81988 /* qsm_tools.R */,
+				831AB57F3076F9C600E81988 /* seeds_find.R */,
+				831AB5803076F9C600E81988 /* segment_anisotropy.R */,
+				831AB5813076F9C600E81988 /* segment_decimation.R */,
+				831AB5823076F9C600E81988 /* segment_flag.R */,
+				831AB5833076F9C600E81988 /* segment_ground.R */,
+				831AB5843076F9C600E81988 /* segment_instance.R */,
+				831AB5853076F9C600E81988 /* segment_overfitting.R */,
+				831AB5863076F9C600E81988 /* segment_plot.R */,
+				831AB5873076F9C600E81988 /* segment_range_filter.R */,
+				831AB5883076F9C600E81988 /* segment_semantic.R */,
+				831AB5893076F9C600E81988 /* segment_transfert_attributes.R */,
+			);
+			path = R;
+			sourceTree = "<group>";
+		};
+		870B3294C0CBD48AF6BBCC1B = {
+			isa = PBXGroup;
+			children = (
+				A2946AB624CDB6BE061A1AC0 /* src */,
+				33FABCE43864BA16A96C1CB2 /* driver */,
+				831AB56F3076F71600E81988 /* R */,
+				FBDC4F23F93125BBEEAE800C /* Products */,
+			);
 			sourceTree = "<group>";
 		};
 		A2946AB624CDB6BE061A1AC0 /* src */ = {
@@ -373,15 +450,15 @@
 				82E6132B01BCF6FA94646178 /* vendor */,
 			);
 			name = src;
-			path = "../src";
+			path = ../src;
 			sourceTree = "<group>";
 		};
-		33FABCE43864BA16A96C1CB2 /* driver */ = {
+		E7C2EE298C8006F9B71A3C8C /* api */ = {
 			isa = PBXGroup;
 			children = (
-				5B5AF546BF1E9276F1957143 /* main.cpp */,
+				10825670E467B3EAA2357C60 /* arbor.h */,
 			);
-			path = driver;
+			path = api;
 			sourceTree = "<group>";
 		};
 		FBDC4F23F93125BBEEAE800C /* Products */ = {
@@ -391,15 +468,6 @@
 				DD007AAFFE657B69F78CDD40 /* arbor-link */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		870B3294C0CBD48AF6BBCC1B = {
-			isa = PBXGroup;
-			children = (
-				A2946AB624CDB6BE061A1AC0 /* src */,
-				33FABCE43864BA16A96C1CB2 /* driver */,
-				FBDC4F23F93125BBEEAE800C /* Products */,
-			);
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,6 +535,14 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		16B06D547CD8E41B720BA307 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34B39242405D5BF8BDAD98FF /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4BEB3E1DD7B743C26068D320 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -518,35 +594,17 @@
 				8AE1F762E45AB6E74C7E585B /* services.cpp in Sources */,
 				6B4A43D71C4E096B050BA46C /* smooth3d.cpp in Sources */,
 				FD670240C3D6F46F5BEEDD5C /* sor.cpp in Sources */,
-				D85114678BEDA05251C44DD4 /* dbscan.cpp in Sources */,
-				60A7268155CB3D7C8EBA4F37 /* delaunay.cpp in Sources */,
-				58E3E0A25EF63CEAA3A1024A /* index.cpp in Sources */,
-				6AA5BF4CC018EE7079A399F8 /* pred3d.cpp in Sources */,
-				D4693C7A1509C269327E694E /* libqsf.cpp in Sources */,
-				A05D379CA388B2F0C2E64632 /* libqsm.cpp in Sources */,
-				6CE304EC0AB6ADEEE915AA06 /* PTD.cpp in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		16B06D547CD8E41B720BA307 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				34B39242405D5BF8BDAD98FF /* main.cpp in Sources */,
+				D85114678BEDA05251C44DD4 /* dbscan/dbscan.cpp in Sources */,
+				60A7268155CB3D7C8EBA4F37 /* hporro/delaunay.cpp in Sources */,
+				58E3E0A25EF63CEAA3A1024A /* hporro/index.cpp in Sources */,
+				6AA5BF4CC018EE7079A399F8 /* hporro/pred3d.cpp in Sources */,
+				D4693C7A1509C269327E694E /* libqsf/libqsf.cpp in Sources */,
+				A05D379CA388B2F0C2E64632 /* libqsm/libqsm.cpp in Sources */,
+				6CE304EC0AB6ADEEE915AA06 /* ptd/PTD.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXContainerItemProxy section */
-		DC84B1C2A1F5A7AB31534F37 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 98F54143AB4E86B28C3AFEE0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5E785D27BEE03D67EB88DFF0;
-			remoteInfo = ArborCore;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXTargetDependency section */
 		5F62427B1141A61A4C075B82 /* PBXTargetDependency */ = {
@@ -557,6 +615,34 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		13C4B7DFF9FFE2F4728903E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GENERATE_INFOPLIST_FILE = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(BUILT_PRODUCTS_DIR)",
+					/opt/homebrew/opt/libomp/lib,
+				);
+				OTHER_LDFLAGS = "-lomp";
+				PRODUCT_NAME = "arbor-link";
+			};
+			name = Release;
+		};
+		3E04C94AF95F871743B761D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				OTHER_CFLAGS = (
+					"-Xpreprocessor",
+					"-fopenmp",
+				);
+				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
+				PRODUCT_NAME = ArborCore;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		B0B56C12A90899E4707AE233 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -567,9 +653,7 @@
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"NOGDAL",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = NOGDAL;
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/../src",
 					"$(PROJECT_DIR)/../src/utils",
@@ -586,7 +670,7 @@
 					"$(PROJECT_DIR)/../src/vendor/ptd",
 					"$(PROJECT_DIR)/../src/vendor/libqsm",
 					"$(PROJECT_DIR)/../src/vendor/libqsf",
-					"/opt/homebrew/opt/libomp/include",
+					/opt/homebrew/opt/libomp/include,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				ONLY_ACTIVE_ARCH = YES;
@@ -606,8 +690,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_OPTIMIZATION_LEVEL = 2;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"NDEBUG",
-					"NOGDAL",
+					NDEBUG,
+					NOGDAL,
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/../src",
@@ -625,7 +709,7 @@
 					"$(PROJECT_DIR)/../src/vendor/ptd",
 					"$(PROJECT_DIR)/../src/vendor/libqsm",
 					"$(PROJECT_DIR)/../src/vendor/libqsf",
-					"/opt/homebrew/opt/libomp/include",
+					/opt/homebrew/opt/libomp/include,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				SDKROOT = macosx;
@@ -646,20 +730,6 @@
 			};
 			name = Debug;
 		};
-		3E04C94AF95F871743B761D4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				EXECUTABLE_PREFIX = lib;
-				OTHER_CFLAGS = (
-					"-Xpreprocessor",
-					"-fopenmp",
-				);
-				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
-				PRODUCT_NAME = ArborCore;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 		EA24D76806FB769B1F28845D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -667,39 +737,21 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(BUILT_PRODUCTS_DIR)",
-					"/opt/homebrew/opt/libomp/lib",
+					/opt/homebrew/opt/libomp/lib,
 				);
-				OTHER_LDFLAGS = (
-					"-lomp",
-				);
+				OTHER_LDFLAGS = "-lomp";
 				PRODUCT_NAME = "arbor-link";
 			};
 			name = Debug;
 		};
-		13C4B7DFF9FFE2F4728903E4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GENERATE_INFOPLIST_FILE = YES;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(BUILT_PRODUCTS_DIR)",
-					"/opt/homebrew/opt/libomp/lib",
-				);
-				OTHER_LDFLAGS = (
-					"-lomp",
-				);
-				PRODUCT_NAME = "arbor-link";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C74034AE7265F595782FCC65 /* Build configuration list for PBXProject "Arbor" */ = {
+		7E3AAD4394BF56D51E08F708 /* Build configuration list for PBXNativeTarget "arbor-link" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B0B56C12A90899E4707AE233 /* Debug */,
-				C2FD164E71C295B24A6638ED /* Release */,
+				EA24D76806FB769B1F28845D /* Debug */,
+				13C4B7DFF9FFE2F4728903E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -713,11 +765,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		7E3AAD4394BF56D51E08F708 /* Build configuration list for PBXNativeTarget "arbor-link" */ = {
+		C74034AE7265F595782FCC65 /* Build configuration list for PBXProject "Arbor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EA24D76806FB769B1F28845D /* Debug */,
-				13C4B7DFF9FFE2F4728903E4 /* Release */,
+				B0B56C12A90899E4707AE233 /* Debug */,
+				C2FD164E71C295B24A6638ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

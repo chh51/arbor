@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A22C00020000000000000002 /* PipelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C00020000000000000001 /* PipelineTests.swift */; };
+		A22C00020000000000000004 /* Arbor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04016CD0A5364D2EA3B95FB7 /* Arbor.framework */; };
 		A11B00010000000000000004 /* arbor_bridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A11B00010000000000000001 /* arbor_bridge.cpp */; };
 		A11B00010000000000000005 /* libArborCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 723E73F5B8DEC41D3AEE030C /* libArborCore.a */; };
 		A11B00010000000000000012 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11B00010000000000000011 /* Bridge.swift */; };
@@ -96,6 +98,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A22C0002000000000000000A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98F54143AB4E86B28C3AFEE0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4CC7183BB7924C78B7AFDBBE;
+			remoteInfo = Arbor;
+		};
 		A11B00010000000000000009 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 98F54143AB4E86B28C3AFEE0 /* Project object */;
@@ -113,6 +122,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A22C00020000000000000001 /* PipelineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineTests.swift; sourceTree = "<group>"; };
+		A22C00020000000000000003 /* ArborTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArborTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A11B00010000000000000001 /* arbor_bridge.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = arbor_bridge.cpp; sourceTree = "<group>"; };
 		A11B00010000000000000002 /* arbor_bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arbor_bridge.h; sourceTree = "<group>"; };
 		A11B00010000000000000003 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module"; path = module.modulemap; sourceTree = "<group>"; };
@@ -271,6 +282,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A22C00020000000000000006 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A22C00020000000000000004 /* Arbor.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A11B00010000000000000007 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -507,6 +526,7 @@
 				33FABCE43864BA16A96C1CB2 /* driver */,
 				A11B00010000000000000006 /* bridge */,
 				C4E1F6E515E84CE7ACCD34B2 /* Arbor */,
+				A22C00020000000000000007 /* ArborTests */,
 				831AB56F3076F71600E81988 /* R */,
 				FBDC4F23F93125BBEEAE800C /* Products */,
 			);
@@ -546,6 +566,7 @@
 				723E73F5B8DEC41D3AEE030C /* libArborCore.a */,
 				DD007AAFFE657B69F78CDD40 /* arbor-link */,
 				04016CD0A5364D2EA3B95FB7 /* Arbor.framework */,
+				A22C00020000000000000003 /* ArborTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -558,6 +579,14 @@
 				A11B00010000000000000003 /* module.modulemap */,
 			);
 			path = bridge;
+			sourceTree = "<group>";
+		};
+		A22C00020000000000000007 /* ArborTests */ = {
+			isa = PBXGroup;
+			children = (
+				A22C00020000000000000001 /* PipelineTests.swift */,
+			);
+			path = ArborTests;
 			sourceTree = "<group>";
 		};
 		C4E1F6E515E84CE7ACCD34B2 /* Arbor */ = {
@@ -648,6 +677,23 @@
 			productReference = 04016CD0A5364D2EA3B95FB7 /* Arbor.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		A22C00020000000000000008 /* ArborTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A22C0002000000000000000D /* Build configuration list for PBXNativeTarget "ArborTests" */;
+			buildPhases = (
+				A22C00020000000000000005 /* Sources */,
+				A22C00020000000000000006 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A22C00020000000000000009 /* PBXTargetDependency */,
+			);
+			name = ArborTests;
+			productName = ArborTests;
+			productReference = A22C00020000000000000003 /* ArborTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -673,11 +719,20 @@
 				5E785D27BEE03D67EB88DFF0 /* ArborCore */,
 				AA70E9F7B86E12482D6DF09B /* arbor-link */,
 				4CC7183BB7924C78B7AFDBBE /* Arbor */,
+				A22C00020000000000000008 /* ArborTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A22C00020000000000000005 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A22C00020000000000000002 /* PipelineTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		16B06D547CD8E41B720BA307 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -786,6 +841,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A22C00020000000000000009 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4CC7183BB7924C78B7AFDBBE /* Arbor */;
+			targetProxy = A22C0002000000000000000A /* PBXContainerItemProxy */;
+		};
 		A11B00010000000000000008 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5E785D27BEE03D67EB88DFF0 /* ArborCore */;
@@ -990,6 +1050,48 @@
 			};
 			name = Release;
 		};
+		A22C0002000000000000000B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.r-lidar.arbor.tests;
+				PRODUCT_NAME = ArborTests;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/bridge";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A22C0002000000000000000C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.r-lidar.arbor.tests;
+				PRODUCT_NAME = ArborTests;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/bridge";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1016,6 +1118,15 @@
 			buildConfigurations = (
 				B0B56C12A90899E4707AE233 /* Debug */,
 				C2FD164E71C295B24A6638ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A22C0002000000000000000D /* Build configuration list for PBXNativeTarget "ArborTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A22C0002000000000000000B /* Debug */,
+				A22C0002000000000000000C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

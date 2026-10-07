@@ -1,6 +1,6 @@
 # Xcode project, then Swift API, then Swift Testing
 
-**Status:** step 1 is in place. Step 2's Swift API calls ArborCore through `apple/bridge` for the pipeline and QSM/QSF surface the static library already compiles. `resolveOversegmentation`, `extractTreeContext`, and `qsfSegmentSemantic` still throw `ArborError.engineNotConnected` because that C++ lives in Rcpp translation units ArborCore does not compile. Swift tests are not started. The processing surface is `apple/notes/05-swift-r-api.md`. The macOS compiler and memory notes are `apple/notes/04-openmp-apple.md`.
+**Status:** step 1 is in place. Step 2's Swift API calls ArborCore through `apple/bridge` for the pipeline and QSM/QSF surface the static library already compiles. `resolveOversegmentation`, `extractTreeContext`, and `qsfSegmentSemantic` still throw `ArborError.engineNotConnected` because that C++ lives in Rcpp translation units ArborCore does not compile. Step 3 has started: `apple/ArborTests/PipelineTests.swift` runs `woodLikelihood` and `hybridHomogeneization` on in-memory clouds. The R fixture tests are not started, and LAS reading is still open. The processing surface is `apple/notes/05-swift-r-api.md`. The macOS compiler and memory notes are `apple/notes/04-openmp-apple.md`.
 
 Work in this order. Each step is done when the one before it builds.
 

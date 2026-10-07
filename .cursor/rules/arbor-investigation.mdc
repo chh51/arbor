@@ -14,6 +14,7 @@ Notes only until a note asks for code:
 3. `notes/03-macos.md` — why the R package runs slowly on macOS
 4. `notes/04-openmp-apple.md` — CPU OpenMP via `libomp`; Apple GPU cores are out of reach
 5. `notes/05-swift-r-api.md` — Swift API and tests matched to R, and the macOS 16–256 GB build
+6. `notes/06-swift-xcode.md` — Xcode C++ target first, then Swift processing API, then Swift Testing
 
 - Record observed facts separately from guesses. Do not treat a hypothesis as a diagnosed bug.
 - Do not edit `src/vendor/` unless a vendored bug is the task.

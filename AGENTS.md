@@ -15,6 +15,7 @@ Working notes live in `notes/`. Update the status line at the top of a note when
 | `notes/03-macos.md` | Why does the R package run slowly on macOS? |
 | `notes/04-openmp-apple.md` | Can OpenMP use this Mac’s CPU, memory, and GPU cores? |
 | `notes/05-swift-r-api.md` | Swift API and tests matched to the R package, plus the macOS 16–256 GB build. |
+| `notes/06-swift-xcode.md` | Xcode C++ library first, then the Swift processing API, then Swift Testing on the R fixtures. |
 
 ## Layout
 

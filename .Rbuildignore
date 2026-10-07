@@ -10,5 +10,5 @@ Makefile
 ^compile_commands\.json$
 ^\.cache$
 ^AGENTS\.md$
-^notes$
 ^\.cursor$
+^apple$

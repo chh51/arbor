@@ -9,12 +9,12 @@ This copy is r-lidar/arbor 1.1.2 (GPL-3). The product API is the R package. The 
 
 Notes only until a note asks for code:
 
-1. `notes/01-cpp.md` — map the engine and the public C++ surface
-2. `notes/02-swift-api.md` — early Swift constraints; superseded by note 05
-3. `notes/03-macos.md` — why the R package runs slowly on macOS
-4. `notes/04-openmp-apple.md` — CPU OpenMP via `libomp`; Apple GPU cores are out of reach
-5. `notes/05-swift-r-api.md` — Swift API and tests matched to R, and the macOS 16–256 GB build
-6. `notes/06-swift-xcode.md` — Xcode C++ target first, then Swift processing API, then Swift Testing
+1. `apple/notes/01-cpp.md` — map the engine and the public C++ surface
+2. `apple/notes/02-swift-api.md` — early Swift constraints; superseded by note 05
+3. `apple/notes/03-macos.md` — why the R package runs slowly on macOS
+4. `apple/notes/04-openmp-apple.md` — CPU OpenMP via `libomp`; Apple GPU cores are out of reach
+5. `apple/notes/05-swift-r-api.md` — Swift API and tests matched to R, and the macOS 16–256 GB build
+6. `apple/notes/06-swift-xcode.md` — Xcode C++ target first, then Swift processing API, then Swift Testing
 
 - Record observed facts separately from guesses. Do not treat a hypothesis as a diagnosed bug.
 - Do not edit `src/vendor/` unless a vendored bug is the task.

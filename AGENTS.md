@@ -6,16 +6,16 @@ Do not change engine code while filling in the investigation notes, unless a not
 
 ## Notes
 
-Working notes live in `notes/`. Update the status line at the top of a note when that track moves.
+Working notes live in `apple/notes/`. Update the status line at the top of a note when that track moves.
 
 | Note | Question |
 | --- | --- |
-| `notes/01-cpp.md` | What is the C++ engine, and what is actually public? |
-| `notes/02-swift-api.md` | Early Swift constraints. Superseded by `notes/05-swift-r-api.md`. |
-| `notes/03-macos.md` | Why does the R package run slowly on macOS? |
-| `notes/04-openmp-apple.md` | Can OpenMP use this Mac’s CPU, memory, and GPU cores? |
-| `notes/05-swift-r-api.md` | Swift API and tests matched to the R package, plus the macOS 16–256 GB build. |
-| `notes/06-swift-xcode.md` | Xcode C++ library first, then the Swift processing API, then Swift Testing on the R fixtures. |
+| `apple/notes/01-cpp.md` | What is the C++ engine, and what is actually public? |
+| `apple/notes/02-swift-api.md` | Early Swift constraints. Superseded by `apple/notes/05-swift-r-api.md`. |
+| `apple/notes/03-macos.md` | Why does the R package run slowly on macOS? |
+| `apple/notes/04-openmp-apple.md` | Can OpenMP use this Mac’s CPU, memory, and GPU cores? |
+| `apple/notes/05-swift-r-api.md` | Swift API and tests matched to the R package, plus the macOS 16–256 GB build. |
+| `apple/notes/06-swift-xcode.md` | Xcode C++ library first, then the Swift processing API, then Swift Testing on the R fixtures. |
 
 ## Layout
 
@@ -29,6 +29,7 @@ Working notes live in `notes/`. Update the status line at the top of a note when
 | `R/` | R API |
 | `src/Makevars` | R package compile (`-DUSING_R`) |
 | `arbor.pro` | qmake shared library, C++20, no R |
+| `apple/Arbor.xcodeproj` | macOS static library `ArborCore` and `arbor-link` driver. No Swift yet |
 
 `NAMESPACE` and `src/RcppExports.cpp` are generated. Do not hand-edit them.
 

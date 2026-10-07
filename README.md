@@ -1,5 +1,9 @@
 # Arbor  <img src="man/figures/logo200.png" align="right"/>
 
+This repository is a fork of [r-lidar/arbor](https://github.com/r-lidar/arbor). Its purpose is to add a Swift API to the existing C++ engine. That Swift API follows the R package’s processing functions: ground, semantic, and instance segmentation, seed finding, and QSM/QSF. Plotting and other interface helpers stay in the R package.
+
+The rest of this file is the upstream README.
+
 [![License: GPL-3](https://img.shields.io/badge/License-GPL3-green.svg)](LICENSE)
 
 **From raw forest scans to thousands of QSMs on your laptop, in minutes.**

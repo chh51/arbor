@@ -1,6 +1,6 @@
 # Xcode project, then Swift API, then Swift Testing
 
-**Status:** discussion only. No Xcode project, Swift sources, or test target yet. The processing surface to match is `notes/05-swift-r-api.md`. The macOS compiler and memory notes are `notes/04-openmp-apple.md`.
+**Status:** step 1 is in place. `apple/Arbor.xcodeproj` builds `ArborCore` and the `arbor-link` driver on this Mac. No Swift target yet. The processing surface to match is `apple/notes/05-swift-r-api.md`. The macOS compiler and memory notes are `apple/notes/04-openmp-apple.md`.
 
 Work in this order. Each step is done when the one before it builds.
 
@@ -28,12 +28,13 @@ Leave out anything that includes Rcpp:
 - `src/RcppExports.cpp`, `src/RcppAutoExport.cpp`
 - `src/misc/read_adtree_skeleton.cpp`
 - `src/experimental/qsm_distance.cpp`
+- `src/experimental/extrat_context.cpp` (the bottom of the file calls `Rcpp::wrap`)
 
 `src/pointcloud/PointCloudDataFrame.cpp` is wrapped in `#ifdef USING_R`, so compiling it into this library produces an empty file. `PointCloud` is then `PointCloudDefault`.
 
 ### OpenMP and RAM
 
-Link Homebrew `libomp` (`-Xpreprocessor -fopenmp`, the libomp include path, `-lomp`). That is the macOS branch `arbor.pro` does not have. Details are in `notes/04-openmp-apple.md`.
+Link Homebrew `libomp` (`-Xpreprocessor -fopenmp`, the libomp include path, `-lomp`). That is the macOS branch `arbor.pro` does not have. Details are in `apple/notes/04-openmp-apple.md`.
 
 One binary covers 16 GB through 256 GB. Do not add a build setting per RAM size. Thread count stays a run-time `OMP_NUM_THREADS`. The 16 GB machine is for the sample scenes below. The book’s 32 GB note is for a multi-thousand-square-metre batch, which is outside these tests.
 
@@ -41,9 +42,15 @@ One binary covers 16 GB through 256 GB. Do not add a build setting per RAM size.
 
 `ArborCore` builds with Apple Clang and the small C++ driver links. Swift is not in the project yet.
 
+That build is `apple/Arbor.xcodeproj`, scheme `arbor-link`. OpenMP is Homebrew `libomp` at `/opt/homebrew/opt/libomp`. The language standard in the project is GNU++20 so Apple headers still provide `M_PI`. `apple/driver/main.cpp` only takes the address of the public entry points.
+
+```bash
+xcodebuild -project apple/Arbor.xcodeproj -scheme arbor-link -configuration Debug build
+```
+
 ## 2. Swift processing API
 
-Add a Swift target in the same project that links `ArborCore`. This is the R processing API from `notes/05-swift-r-api.md`, not the plots.
+Add a Swift target in the same project that links `ArborCore`. This is the R processing API from `apple/notes/05-swift-r-api.md`, not the plots.
 
 Swift names follow the R names (`segmentGround` for `segment_ground`). Defaults and result fields stay aligned. `arborParametersDefault` mirrors `arbor::settings::ArborParameters`. Constants stay `ARBORTREE` 0, `ARBORLOW` 1, `ARBORUNDERSTORY` 2, `ARBORBUFFER` 3.
 

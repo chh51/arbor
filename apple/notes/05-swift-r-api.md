@@ -1,6 +1,6 @@
 # Swift API matched to the R package
 
-**Status:** target for the Swift work. No Swift package yet. Supersedes the smaller spike in `notes/02-swift-api.md`. macOS build details are in `notes/04-openmp-apple.md`.
+**Status:** target for the Swift work. No Swift package yet. Supersedes the smaller spike in `apple/notes/02-swift-api.md`. macOS build details are in `apple/notes/04-openmp-apple.md`.
 
 Three goals:
 
@@ -78,12 +78,12 @@ Arbor’s C++ does not read LAS/LAZ. The R tests rely on lidR for that. The Swif
 
 One arm64 binary. RAM size is not a compile-time switch. The same library has to start and produce the same results on a 16 GB Mac and a 256 GB Mac Studio. Scene size and thread count are what change.
 
-Build changes, from `notes/04-openmp-apple.md`:
+Build changes, from `apple/notes/04-openmp-apple.md`:
 
 - Apple Clang, C++20, `USING_R` off, so `PointCloud` is `PointCloudDefault`.
 - Link Homebrew `libomp` with `-Xpreprocessor -fopenmp` and `-lomp`. `arbor.pro` today passes GCC’s `-fopenmp` on every Unix host, which Apple Clang rejects. That file needs a macOS branch.
 - Do not compile `src/R/` or `src/misc/read_adtree_skeleton.cpp` into this library. Do compile `src/vendor/libqsf`, which `arbor.pro` currently omits while `QSF.cpp` calls it.
-- No `#pragma omp target`. Apple GPU cores are not an OpenMP device. See `notes/04-openmp-apple.md`.
+- No `#pragma omp target`. Apple GPU cores are not an OpenMP device. See `apple/notes/04-openmp-apple.md`.
 
 Memory behavior the build must allow, without a second binary:
 

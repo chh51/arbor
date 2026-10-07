@@ -1,6 +1,6 @@
 # 3. macOS
 
-**Status:** the book’s macOS warning is an OpenMP performance limit on the R binary toolchain. CPU OpenMP via `libomp` is the path that fits Arbor with a build-flag change. See `notes/04-openmp-apple.md`. No build has been run on this machine yet.
+**Status:** the book’s macOS warning is an OpenMP performance limit on the R binary toolchain. CPU OpenMP via `libomp` is the path that fits Arbor with a build-flag change. See `apple/notes/04-openmp-apple.md`. No build has been run on this machine yet.
 
 ## What the book says
 
@@ -44,7 +44,7 @@ Record the command, the compiler, and the first error. Stop at the first hard fa
 - [ ] `R CMD INSTALL .` (or the install line in `AGENTS.md`) and note whether OpenMP flags are empty
 - [ ] `qmake arbor.pro && make` and save the first compiler or linker error
 - [ ] If the failure is `-fopenmp`: retry that one build with Homebrew `libomp` flags, as a test, and write down whether the rest of the file then links
-- [ ] If the failure is a missing symbol: check it against the `arbor.pro` source list in `notes/01-cpp.md`
+- [ ] If the failure is a missing symbol: check it against the `arbor.pro` source list in `apple/notes/01-cpp.md`
 - [ ] If both builds succeed: the bug is runtime. Capture the crash or wrong result and the pipeline step, then look at that `.cpp` file
 
 ## Not assumed yet

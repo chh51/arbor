@@ -4,15 +4,17 @@ Local working copy of [r-lidar/arbor](https://github.com/r-lidar/arbor) **1.1.2*
 
 Do not change engine code while filling in the investigation notes, unless a note explicitly asks for a code change.
 
-## Three tracks
+## Notes
 
 Working notes live in `notes/`. Update the status line at the top of a note when that track moves.
 
-| Track | Note | Question |
-| --- | --- | --- |
-| 1 | `notes/01-cpp.md` | What is the C++ engine, and what is actually public? |
-| 2 | `notes/02-swift-api.md` | How would a Swift API call that C++? |
-| 3 | `notes/03-macos.md` | Why does the C++ have trouble on macOS? |
+| Note | Question |
+| --- | --- |
+| `notes/01-cpp.md` | What is the C++ engine, and what is actually public? |
+| `notes/02-swift-api.md` | Early Swift constraints. Superseded by `notes/05-swift-r-api.md`. |
+| `notes/03-macos.md` | Why does the R package run slowly on macOS? |
+| `notes/04-openmp-apple.md` | Can OpenMP use this Mac’s CPU, memory, and GPU cores? |
+| `notes/05-swift-r-api.md` | Swift API and tests matched to the R package, plus the macOS 16–256 GB build. |
 
 ## Layout
 

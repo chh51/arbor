@@ -1,0 +1,20 @@
+---
+description: Arbor investigation tracks — C++ map, Swift API, macOS build
+alwaysApply: true
+---
+
+# Arbor investigation
+
+This copy is r-lidar/arbor 1.1.2 (GPL-3). The product API is the R package. The C++ entry without R is `src/api/arbor.h`.
+
+Three tracks, notes only until a track asks for code:
+
+1. `notes/01-cpp.md` — map the engine and the public C++ surface
+2. `notes/02-swift-api.md` — how a Swift API would call that C++
+3. `notes/03-macos.md` — why the C++ misbehaves on macOS
+
+- Record observed facts separately from guesses. Do not treat a hypothesis as a diagnosed bug.
+- Do not edit `src/vendor/` unless a vendored bug is the task.
+- Do not hand-edit `NAMESPACE` or `src/RcppExports.cpp`.
+- Keep new notes and agent files out of the R tarball (`.Rbuildignore`).
+- `USING_R` swaps `PointCloud` and pulls in Rcpp. A Swift or standalone build must not define it.

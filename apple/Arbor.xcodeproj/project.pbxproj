@@ -63,6 +63,33 @@
 		F11B746C3EA11295E42494E4 /* segment_semantic_api.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C72E0CE3273B4BBE9CE4C959 /* segment_semantic_api.cpp */; };
 		F3D360707E47E21F23FE371D /* libArborCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 723E73F5B8DEC41D3AEE030C /* libArborCore.a */; };
 		FD670240C3D6F46F5BEEDD5C /* sor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1394936DD73325AC60319D86 /* sor.cpp */; };
+		3228EC4EC8ED40A89B65F504 /* Allometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A73BFF3E014EE19540FBD4 /* Allometry.swift */; };
+		DBCE5E405B9E4C96B02F49AC /* ArborError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5CA6900ABA403AAA93DB29 /* ArborError.swift */; };
+		332BC9B869CB46129F78286A /* Colorize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D466B91B446C98F199377 /* Colorize.swift */; };
+		06C0915313BF4A0C865EA64A /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92E59EA16354FE7A8DCB271 /* Engine.swift */; };
+		9FCDB505AD254179BA1C79CB /* Experimental.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AB17614ABB4761942F0773 /* Experimental.swift */; };
+		0805ECCE508D419BB6A153EA /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = A782C1C6DB2543CFBBDDE7BC /* Flags.swift */; };
+		A1FB0E2C61444C3FB8938125 /* Homogeneization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3CFC299684062BDBADE8A /* Homogeneization.swift */; };
+		DA8E870EEA5246B397B3F430 /* Oversegmentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAECC1B957A4605914112B0 /* Oversegmentation.swift */; };
+		9551FA515B9846AA8F8C301A /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA176F73CBB9418F9C36501D /* Parameters.swift */; };
+		1F913D71A0914689BE8ED999 /* PointCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D63E6AA508847DEBC750ED4 /* PointCloud.swift */; };
+		43F2BD1DB34F45378CF1974E /* QSF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BC377C94A242CEBC0437AC /* QSF.swift */; };
+		364DA123F0C342FDB0BE45B3 /* QSFFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42876BE83DD4A4BB57BBA6E /* QSFFilter.swift */; };
+		4FA78E846BE34840A789806E /* QSFIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE2ED4B884A46879B3DDE74 /* QSFIO.swift */; };
+		735C14C099264581A2624EF6 /* QSFLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10506A50F2774030A4F562AB /* QSFLog.swift */; };
+		1E0ACB41E0FF4C96A159846E /* QSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FCF2974A1047008E1B6AE9 /* QSM.swift */; };
+		6264514B4E4441309466D31A /* QSMDBH.swift in Sources */ = {isa = PBXBuildFile; fileRef = D065265BC3754EADA7765DDC /* QSMDBH.swift */; };
+		5A36375876C54CED9770AF24 /* QSMIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278969490432495CABC1AD5B /* QSMIO.swift */; };
+		A05AE3A24BB640CE9C91C357 /* QSMStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC517E9D28843318755138C /* QSMStats.swift */; };
+		9D06D04805184252885E5ABD /* QSMSubset.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42D7E4C9CD49F6B367EAD1 /* QSMSubset.swift */; };
+		E5E195EFB1EF4474AD3D4A4D /* QSMTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBB3C2AC1344FA4A664BE03 /* QSMTools.swift */; };
+		7FFC6D7D02884D54BA12D853 /* Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333B881713C2425A9A107012 /* Range.swift */; };
+		AFB2457B361C4BE2B6E437D6 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D3B52E7DF548BDB3323666 /* Seeds.swift */; };
+		518AA38EBD5844668BDCB113 /* SegmentGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8B12BA87EB4FC4A5024D8B /* SegmentGround.swift */; };
+		BFA615A96FC74B5691835766 /* SegmentInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FDC03E5BB4C8F9FCD7677 /* SegmentInstance.swift */; };
+		F535E0C687ED48938036C259 /* SegmentSemantic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B29CFB9F04DB48F84A6A9 /* SegmentSemantic.swift */; };
+		AB5460198CE34D52953775C9 /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C7AE0EBD1F42589D550BD0 /* Transfer.swift */; };
+		DA2588A1731742AB9E19DE12 /* WoodLikelihood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2BC8A26B3C44D7AE91B740 /* WoodLikelihood.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,6 +226,34 @@
 		F54075B383346589CCEBE011 /* progressbar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = progressbar.cpp; sourceTree = "<group>"; };
 		F728C2A2BFAE1B1B642E1BD7 /* QSMbuilder_butt.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QSMbuilder_butt.cpp; sourceTree = "<group>"; };
 		FEEE25B6BDF424A326DDE4A5 /* qsm_api.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = qsm_api.cpp; sourceTree = "<group>"; };
+		B9A73BFF3E014EE19540FBD4 /* Allometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allometry.swift; sourceTree = "<group>"; };
+		1F5CA6900ABA403AAA93DB29 /* ArborError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArborError.swift; sourceTree = "<group>"; };
+		0A9D466B91B446C98F199377 /* Colorize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colorize.swift; sourceTree = "<group>"; };
+		A92E59EA16354FE7A8DCB271 /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
+		B2AB17614ABB4761942F0773 /* Experimental.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experimental.swift; sourceTree = "<group>"; };
+		A782C1C6DB2543CFBBDDE7BC /* Flags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flags.swift; sourceTree = "<group>"; };
+		A0B3CFC299684062BDBADE8A /* Homogeneization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homogeneization.swift; sourceTree = "<group>"; };
+		1EAECC1B957A4605914112B0 /* Oversegmentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oversegmentation.swift; sourceTree = "<group>"; };
+		AA176F73CBB9418F9C36501D /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
+		6D63E6AA508847DEBC750ED4 /* PointCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointCloud.swift; sourceTree = "<group>"; };
+		08BC377C94A242CEBC0437AC /* QSF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QSF.swift; sourceTree = "<group>"; };
+		D42876BE83DD4A4BB57BBA6E /* QSFFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QSFFilter.swift; sourceTree = "<group>"; };
+		0EE2ED4B884A46879B3DDE74 /* QSFIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QSFIO.swift; sourceTree = "<group>"; };
+		10506A50F2774030A4F562AB /* QSFLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QSFLog.swift; sourceTree = "<group>"; };
+		25FCF2974A1047008E1B6AE9 /* QSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QSM.swift; sourceTree = "<group>"; };
+		D065265BC3754EADA7765DDC /* QSMDBH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QSMDBH.swift; sourceTree = "<group>"; };
+		278969490432495CABC1AD5B /* QSMIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QSMIO.swift; sourceTree = "<group>"; };
+		5CC517E9D28843318755138C /* QSMStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QSMStats.swift; sourceTree = "<group>"; };
+		DE42D7E4C9CD49F6B367EAD1 /* QSMSubset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QSMSubset.swift; sourceTree = "<group>"; };
+		6FBB3C2AC1344FA4A664BE03 /* QSMTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QSMTools.swift; sourceTree = "<group>"; };
+		333B881713C2425A9A107012 /* Range.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Range.swift; sourceTree = "<group>"; };
+		32D3B52E7DF548BDB3323666 /* Seeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
+		DD8B12BA87EB4FC4A5024D8B /* SegmentGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentGround.swift; sourceTree = "<group>"; };
+		408FDC03E5BB4C8F9FCD7677 /* SegmentInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentInstance.swift; sourceTree = "<group>"; };
+		8E4B29CFB9F04DB48F84A6A9 /* SegmentSemantic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentSemantic.swift; sourceTree = "<group>"; };
+		E1C7AE0EBD1F42589D550BD0 /* Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
+		4F2BC8A26B3C44D7AE91B740 /* WoodLikelihood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoodLikelihood.swift; sourceTree = "<group>"; };
+		04016CD0A5364D2EA3B95FB7 /* Arbor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Arbor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -428,6 +483,7 @@
 			children = (
 				A2946AB624CDB6BE061A1AC0 /* src */,
 				33FABCE43864BA16A96C1CB2 /* driver */,
+				C4E1F6E515E84CE7ACCD34B2 /* Arbor */,
 				831AB56F3076F71600E81988 /* R */,
 				FBDC4F23F93125BBEEAE800C /* Products */,
 			);
@@ -466,8 +522,43 @@
 			children = (
 				723E73F5B8DEC41D3AEE030C /* libArborCore.a */,
 				DD007AAFFE657B69F78CDD40 /* arbor-link */,
+				04016CD0A5364D2EA3B95FB7 /* Arbor.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C4E1F6E515E84CE7ACCD34B2 /* Arbor */ = {
+			isa = PBXGroup;
+			children = (
+				B9A73BFF3E014EE19540FBD4 /* Allometry.swift */,
+				1F5CA6900ABA403AAA93DB29 /* ArborError.swift */,
+				0A9D466B91B446C98F199377 /* Colorize.swift */,
+				A92E59EA16354FE7A8DCB271 /* Engine.swift */,
+				B2AB17614ABB4761942F0773 /* Experimental.swift */,
+				A782C1C6DB2543CFBBDDE7BC /* Flags.swift */,
+				A0B3CFC299684062BDBADE8A /* Homogeneization.swift */,
+				1EAECC1B957A4605914112B0 /* Oversegmentation.swift */,
+				AA176F73CBB9418F9C36501D /* Parameters.swift */,
+				6D63E6AA508847DEBC750ED4 /* PointCloud.swift */,
+				08BC377C94A242CEBC0437AC /* QSF.swift */,
+				D42876BE83DD4A4BB57BBA6E /* QSFFilter.swift */,
+				0EE2ED4B884A46879B3DDE74 /* QSFIO.swift */,
+				10506A50F2774030A4F562AB /* QSFLog.swift */,
+				25FCF2974A1047008E1B6AE9 /* QSM.swift */,
+				D065265BC3754EADA7765DDC /* QSMDBH.swift */,
+				278969490432495CABC1AD5B /* QSMIO.swift */,
+				5CC517E9D28843318755138C /* QSMStats.swift */,
+				DE42D7E4C9CD49F6B367EAD1 /* QSMSubset.swift */,
+				6FBB3C2AC1344FA4A664BE03 /* QSMTools.swift */,
+				333B881713C2425A9A107012 /* Range.swift */,
+				32D3B52E7DF548BDB3323666 /* Seeds.swift */,
+				DD8B12BA87EB4FC4A5024D8B /* SegmentGround.swift */,
+				408FDC03E5BB4C8F9FCD7677 /* SegmentInstance.swift */,
+				8E4B29CFB9F04DB48F84A6A9 /* SegmentSemantic.swift */,
+				E1C7AE0EBD1F42589D550BD0 /* Transfer.swift */,
+				4F2BC8A26B3C44D7AE91B740 /* WoodLikelihood.swift */,
+			);
+			path = Arbor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -506,6 +597,21 @@
 			productReference = DD007AAFFE657B69F78CDD40 /* arbor-link */;
 			productType = "com.apple.product-type.tool";
 		};
+		4CC7183BB7924C78B7AFDBBE /* Arbor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F16307E73AD48D9A1A70741 /* Build configuration list for PBXNativeTarget "Arbor" */;
+			buildPhases = (
+				00E9313EA3A7409F94DDC009 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Arbor;
+			productName = Arbor;
+			productReference = 04016CD0A5364D2EA3B95FB7 /* Arbor.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -530,6 +636,7 @@
 			targets = (
 				5E785D27BEE03D67EB88DFF0 /* ArborCore */,
 				AA70E9F7B86E12482D6DF09B /* arbor-link */,
+				4CC7183BB7924C78B7AFDBBE /* Arbor */,
 			);
 		};
 /* End PBXProject section */
@@ -601,6 +708,40 @@
 				D4693C7A1509C269327E694E /* libqsf/libqsf.cpp in Sources */,
 				A05D379CA388B2F0C2E64632 /* libqsm/libqsm.cpp in Sources */,
 				6CE304EC0AB6ADEEE915AA06 /* ptd/PTD.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00E9313EA3A7409F94DDC009 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3228EC4EC8ED40A89B65F504 /* Allometry.swift in Sources */,
+				DBCE5E405B9E4C96B02F49AC /* ArborError.swift in Sources */,
+				332BC9B869CB46129F78286A /* Colorize.swift in Sources */,
+				06C0915313BF4A0C865EA64A /* Engine.swift in Sources */,
+				9FCDB505AD254179BA1C79CB /* Experimental.swift in Sources */,
+				0805ECCE508D419BB6A153EA /* Flags.swift in Sources */,
+				A1FB0E2C61444C3FB8938125 /* Homogeneization.swift in Sources */,
+				DA8E870EEA5246B397B3F430 /* Oversegmentation.swift in Sources */,
+				9551FA515B9846AA8F8C301A /* Parameters.swift in Sources */,
+				1F913D71A0914689BE8ED999 /* PointCloud.swift in Sources */,
+				43F2BD1DB34F45378CF1974E /* QSF.swift in Sources */,
+				364DA123F0C342FDB0BE45B3 /* QSFFilter.swift in Sources */,
+				4FA78E846BE34840A789806E /* QSFIO.swift in Sources */,
+				735C14C099264581A2624EF6 /* QSFLog.swift in Sources */,
+				1E0ACB41E0FF4C96A159846E /* QSM.swift in Sources */,
+				6264514B4E4441309466D31A /* QSMDBH.swift in Sources */,
+				5A36375876C54CED9770AF24 /* QSMIO.swift in Sources */,
+				A05AE3A24BB640CE9C91C357 /* QSMStats.swift in Sources */,
+				9D06D04805184252885E5ABD /* QSMSubset.swift in Sources */,
+				E5E195EFB1EF4474AD3D4A4D /* QSMTools.swift in Sources */,
+				7FFC6D7D02884D54BA12D853 /* Range.swift in Sources */,
+				AFB2457B361C4BE2B6E437D6 /* Seeds.swift in Sources */,
+				518AA38EBD5844668BDCB113 /* SegmentGround.swift in Sources */,
+				BFA615A96FC74B5691835766 /* SegmentInstance.swift in Sources */,
+				F535E0C687ED48938036C259 /* SegmentSemantic.swift in Sources */,
+				AB5460198CE34D52953775C9 /* Transfer.swift in Sources */,
+				DA2588A1731742AB9E19DE12 /* WoodLikelihood.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,6 +885,46 @@
 			};
 			name = Debug;
 		};
+		8C0F42FEAFD94CB49FCF3D7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.r-lidar.arbor;
+				PRODUCT_MODULE_NAME = Arbor;
+				PRODUCT_NAME = Arbor;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		742FCC37130C48B596A7CDFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.r-lidar.arbor;
+				PRODUCT_MODULE_NAME = Arbor;
+				PRODUCT_NAME = Arbor;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -770,6 +951,15 @@
 			buildConfigurations = (
 				B0B56C12A90899E4707AE233 /* Debug */,
 				C2FD164E71C295B24A6638ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6F16307E73AD48D9A1A70741 /* Build configuration list for PBXNativeTarget "Arbor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C0F42FEAFD94CB49FCF3D7E /* Debug */,
+				742FCC37130C48B596A7CDFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

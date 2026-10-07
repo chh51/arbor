@@ -1,6 +1,6 @@
 # Xcode project, then Swift API, then Swift Testing
 
-**Status:** step 1 is in place. `apple/Arbor.xcodeproj` builds `ArborCore` and the `arbor-link` driver on this Mac. No Swift target yet. The processing surface to match is `apple/notes/05-swift-r-api.md`. The macOS compiler and memory notes are `apple/notes/04-openmp-apple.md`.
+**Status:** step 1 is in place. Step 2 has a public Swift API in `apple/Arbor/`, target `Arbor` in `apple/Arbor.xcodeproj`. Functions that are R logic run in Swift. Functions that enter the C++ engine throw `ArborError.engineNotConnected` until that link exists. Swift tests are not started. The processing surface is `apple/notes/05-swift-r-api.md`. The macOS compiler and memory notes are `apple/notes/04-openmp-apple.md`.
 
 Work in this order. Each step is done when the one before it builds.
 
